@@ -17,12 +17,11 @@ import no.ntnu.mycbr.CBREngine;
 
 public class DataStorage {
 
-
 	private String test;
 	private MetaData metaData;
 	private StatusMessage statusMessage;
-	private List<Phone> phoneList;
-	private List<RetrievalCase> retrievalphoneList;
+	private List<Player> soccerplayerList;
+	private List<RetrievalCase> retrievalsoccerplayerList;
 	private ArrayList<Case> Cases = new ArrayList<Case>(); 
 	private int addedCases = 0;
 	private int casesCount;
@@ -45,6 +44,7 @@ public class DataStorage {
 		this.casesCount = casesCount;
 	}
 
+
 	@JsonIgnore
 	private Map<String, String> customQuery;
 	@JsonIgnore
@@ -53,7 +53,7 @@ public class DataStorage {
     private Project project;
 	private static DataStorage _data;
 	@JsonIgnore
-	private Concept smartphone;
+	private Concept soccerplayer;
 	@JsonIgnore
 	private ICaseBase casebasee;
 
@@ -63,13 +63,13 @@ public class DataStorage {
 		this.casesCount = 0;
 		this.metaData = new MetaData();
 		this.statusMessage = new StatusMessage();
-		this.phoneList = new ArrayList<Phone>();
-		this.retrievalphoneList = new ArrayList<RetrievalCase>();
+		this.soccerplayerList = new ArrayList<Player>();
+		this.retrievalsoccerplayerList = new ArrayList<RetrievalCase>();
         this.engine = new CBREngine();
         System.out.println("###################");
         System.out.println(engine.getConceptName());
         this.project = engine.createProjectFromPRJ();
-        this.smartphone = project.getConceptByID(engine.getConceptName());
+        this.soccerplayer = project.getConceptByID(engine.getConceptName());
         try {
 			this.casebasee = project.createDefaultCB("cb");
 		} catch (Exception e) {
@@ -87,72 +87,53 @@ public class DataStorage {
 	}
 
 
-    public Project getProject() {
-        return project;
-    }
-
-    public CBREngine getEngine() {
-		return engine;
-	}
-
-	public void setEngine(CBREngine engine) {
-		this.engine = engine;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-    
 	public String getTest() {
 		return test;
 	}
+
 
 	public void setTest(String test) {
 		this.test = test;
 	}
 
+
 	public MetaData getMetaData() {
 		return metaData;
 	}
+
 
 	public void setMetaData(MetaData metaData) {
 		this.metaData = metaData;
 	}
 
+
 	public StatusMessage getStatusMessage() {
 		return statusMessage;
 	}
+
 
 	public void setStatusMessage(StatusMessage statusMessage) {
 		this.statusMessage = statusMessage;
 	}
 
-	public List<Phone> getPhoneList() {
-		return phoneList;
-	}
 
-	public void setPhoneList(List<Phone> phoneList) {
-		this.phoneList = phoneList;
+	public List<Player> getSoccerplayerList() {
+		return soccerplayerList;
 	}
 
 
-	public ICaseBase getCasebasee() {
-		return casebasee;
+	public void setSoccerplayerList(List<Player> soccerplayerList) {
+		this.soccerplayerList = soccerplayerList;
 	}
 
 
-	public void setCasebasee(ICaseBase casebase) {
-		this.casebasee = casebase;
+	public List<RetrievalCase> getRetrievalsoccerplayerList() {
+		return retrievalsoccerplayerList;
 	}
 
 
-	public Concept getSmartphone() {
-		return smartphone;
-	}
-
-
-	public void setSmartphone(Concept smartphone) {
-		this.smartphone = smartphone;
+	public void setRetrievalsoccerplayerList(List<RetrievalCase> retrievalsoccerplayerList) {
+		this.retrievalsoccerplayerList = retrievalsoccerplayerList;
 	}
 
 
@@ -166,16 +147,6 @@ public class DataStorage {
 	}
 
 
-	public List<RetrievalCase> getRetrievalphoneList() {
-		return retrievalphoneList;
-	}
-
-
-	public void setRetrievalphoneList(List<RetrievalCase> retrievalphoneList) {
-		this.retrievalphoneList = retrievalphoneList;
-	}
-
-
 	public Map<String, String> getCustomQuery() {
 		return customQuery;
 	}
@@ -184,7 +155,55 @@ public class DataStorage {
 	public void setCustomQuery(Map<String, String> customQuery) {
 		this.customQuery = customQuery;
 	}
-	
-	
+
+
+	public CBREngine getEngine() {
+		return engine;
+	}
+
+
+	public void setEngine(CBREngine engine) {
+		this.engine = engine;
+	}
+
+
+	public Project getProject() {
+		return project;
+	}
+
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+
+	public static DataStorage get_data() {
+		return _data;
+	}
+
+
+	public static void set_data(DataStorage _data) {
+		DataStorage._data = _data;
+	}
+
+
+	public Concept getSoccerplayer() {
+		return soccerplayer;
+	}
+
+
+	public void setSoccerplayer(Concept soccerplayer) {
+		soccerplayer = soccerplayer;
+	}
+
+
+	public ICaseBase getCasebasee() {
+		return casebasee;
+	}
+
+
+	public void setCasebasee(ICaseBase casebasee) {
+		this.casebasee = casebasee;
+	}	
 
 }

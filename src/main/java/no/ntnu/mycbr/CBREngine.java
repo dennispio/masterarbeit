@@ -14,11 +14,11 @@ public class CBREngine {
 	private static String data_path = System.getProperty("user.dir") + "/src/main/resources/";
 	/* project specific: NewExampleProject*/
 	// name of the project file
-	private static String projectName = "smartphone.prj";
+	private static String projectName = "soccerplayer.prj";
 	// name of the central concept 
-	private static String conceptName = "Smartphone";
+	private static String conceptName = "Soccerplayer";
 	// name of the csv containing the instances
-	private static String csv = "smartphone_casebase.csv";
+	private static String csv = "soccerplayer_casebase.csv";
 	// set the separators that are used in the csv file
 	private static String columnseparator = ";";
 	private static String multiplevalueseparator = ",";

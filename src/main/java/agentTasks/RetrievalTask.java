@@ -21,7 +21,6 @@ import de.dfki.mycbr.util.Pair;
 import jade.content.lang.sl.ParseException;
 import objects.Case;
 import objects.DataStorage;
-import objects.Phone;
 import objects.QueryCase;
 import objects.RetrievalCase;
 
@@ -36,156 +35,89 @@ public class RetrievalTask {
 		return this.message;
 	}
 	
-	public void retrievalCases(Serializable phone) {
+	public void retrievalCases(Serializable player) {
 		DataStorage dataStorage = DataStorage.getSharedDataStorage();
 
 	try {
 		
-		QueryCase ph = (QueryCase) phone;
+		QueryCase ph = (QueryCase) player;
 		
 		System.out.println(ph.toString());
 		
-		Concept smartphone = DataStorage.getSharedDataStorage().getProject().getConceptByID("Smartphone");
+		Concept soccerplayer = DataStorage.getSharedDataStorage().getProject().getConceptByID("Soccerplayer");
 
 	    ICaseBase cb = DataStorage.getSharedDataStorage().getCasebasee();
-	    dataStorage.getSharedDataStorage().getRetrievalphoneList().clear();
+	    dataStorage.getSharedDataStorage().getRetrievalsoccerplayerList().clear();
 
-	    Retrieval retrieve = new Retrieval(smartphone, cb);
+	    Retrieval retrieve = new Retrieval(soccerplayer, cb);
 	    retrieve.setRetrievalMethod(RetrievalMethod.RETRIEVE_SORTED);
 	    
 	    Instance query = retrieve.getQueryInstance();	    
 	  	
-	    SymbolDesc manufactureDesc = (SymbolDesc) smartphone.getAllAttributeDescs().get("manufacture");
-	    StringDesc modelDesc = (StringDesc) smartphone.getAllAttributeDescs().get("model");
-	    StringDesc resolutionDesc = (StringDesc) smartphone.getAllAttributeDescs().get("resolution");
-	    IntegerDesc ramDesc = (IntegerDesc) smartphone.getAllAttributeDescs().get("arbeitsspeicher");
-	    FloatDesc  priceDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("price");
-	    FloatDesc  sizeDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("size");
-	    SymbolDesc displaytypeDesc = (SymbolDesc) smartphone.getAllAttributeDescs().get("displaytype");
-	    SymbolDesc cpuDesc = (SymbolDesc) smartphone.getAllAttributeDescs().get("cpu");
-	    FloatDesc  weightDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("weight");
-	    FloatDesc  akkukapaDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("akkukapa");
-	    FloatDesc  kameramegapixelDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("kameramegapixel");
-	    FloatDesc  frontkameraDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("frontkameramegapixel");
-	    SymbolDesc memoryslotDesc = (SymbolDesc) smartphone.getAllAttributeDescs().get("memoryslot");
-	    FloatDesc  memoryDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("memory");
-	    IntegerDesc nfcDesc = (IntegerDesc) smartphone.getAllAttributeDescs().get("nfc");
-	    FloatDesc  thicknessDesc = (FloatDesc) smartphone.getAllAttributeDescs().get("thickness");
-	    	    
+	    IntegerDesc alterDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("Alter");
+	    StringDesc nameDesc = (StringDesc) soccerplayer.getAllAttributeDescs().get("Name");
+	    FloatDesc overallAbgefangeneBaelleDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallAbgefangeneBaelle");
+	    IntegerDesc overallAssistsDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("OverallAssists");
+	    FloatDesc overallBallEroberungenDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallBallEroberungen");
+	    FloatDesc  overallBallverlustDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallBallverlust");
+	    FloatDesc  overallBewertungDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallBewertung");
+	    FloatDesc  overallBlockSchussDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallBlockSchuss");
+	    FloatDesc  overallDribblingsDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallDribblings");
+	    FloatDesc  overallEinsatzquoteDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallEinsatzquote");
+	    FloatDesc  overallFoulsDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallFouls");
+	    FloatDesc  overallGeklaerteBaelleDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallGeklaerteBaelle");
+	    IntegerDesc overallGoalsDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("OverallGoals");
+	    FloatDesc  overallKP90Desc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallKP90");
+	    FloatDesc  overallkreierteGrosschancenDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallKreierteGrosschancen");
+	    IntegerDesc  overallMinPlayedDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("OverallMinPlayed");
+	    FloatDesc  overallPassquoteDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallPassquote");
+	    FloatDesc  overallSchussgenauigkeitDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallSchussgenauigkeit");
+	    FloatDesc  overallSH90Desc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallSh90");
+	    FloatDesc  overallTacklingquoteDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallTacklingquote");
+	    FloatDesc  overallZweikampfquoteDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallZweikampfquote");
+	    FloatDesc  overallxADesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxA");
+	    FloatDesc  overallxA90Desc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxA90");
+	    FloatDesc  overallxGDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxG");
+	    FloatDesc  overallxG90Desc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxG90");
+	    SymbolDesc positionDesc = (SymbolDesc) soccerplayer.getAllAttributeDescs().get("Position");
+	    FloatDesc  spieltagbewertungDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("SpieltagBewertung");
 	    
+    	query.addAttribute(alterDesc, alterDesc.getAttribute(1));
+    	query.addAttribute(nameDesc, nameDesc.getAttribute("reus"));
+    	query.addAttribute(overallAbgefangeneBaelleDesc, overallAbgefangeneBaelleDesc.getAttribute(1));
+    	query.addAttribute(overallAssistsDesc, overallAssistsDesc.getAttribute(1));
+    	query.addAttribute(overallBallEroberungenDesc, overallBallEroberungenDesc.getAttribute(1));
+    	query.addAttribute(overallBallverlustDesc, overallBallverlustDesc.getAttribute(1));
+    	query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(1));
+    	query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(1));
+    	query.addAttribute(overallDribblingsDesc, overallDribblingsDesc.getAttribute(1));
+    	query.addAttribute(overallEinsatzquoteDesc, overallEinsatzquoteDesc.getAttribute(1));
+    	query.addAttribute(overallFoulsDesc, overallFoulsDesc.getAttribute(1));
+    	query.addAttribute(overallGeklaerteBaelleDesc, overallGeklaerteBaelleDesc.getAttribute(1));
+    	query.addAttribute(overallGoalsDesc, overallGoalsDesc.getAttribute(1));
+    	query.addAttribute(overallKP90Desc, overallKP90Desc.getAttribute(1));
+    	query.addAttribute(overallkreierteGrosschancenDesc, overallkreierteGrosschancenDesc.getAttribute(1));
+    	query.addAttribute(overallMinPlayedDesc, overallMinPlayedDesc.getAttribute(1));
+    	query.addAttribute(overallPassquoteDesc, overallPassquoteDesc.getAttribute(1));
+    	query.addAttribute(overallSchussgenauigkeitDesc, overallSchussgenauigkeitDesc.getAttribute(1));
+    	query.addAttribute(overallSH90Desc, overallSH90Desc.getAttribute(1));
+    	query.addAttribute(overallTacklingquoteDesc, overallTacklingquoteDesc.getAttribute(1));
+    	query.addAttribute(overallZweikampfquoteDesc, overallZweikampfquoteDesc.getAttribute(1));
+    	query.addAttribute(overallxADesc, overallxADesc.getAttribute(1));
+    	query.addAttribute(overallxA90Desc, overallxA90Desc.getAttribute(1));
+    	query.addAttribute(overallxGDesc, overallxGDesc.getAttribute(1));
+    	query.addAttribute(overallxG90Desc, overallxG90Desc.getAttribute(1));
+    	query.addAttribute(positionDesc, positionDesc.getAttribute("RM"));
+    	query.addAttribute(spieltagbewertungDesc, spieltagbewertungDesc.getAttribute(1));
 
-	    System.out.println(ph.toString());
+
+    	
+  
 	    
-	    if(Integer.parseInt(ph.getManufacturecheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getManufacture())) {
-			    query.addAttribute(manufactureDesc, manufactureDesc.getAttribute(ph.getManufacture()));
-			    smartphone.getActiveAmalgamFct().setWeight(manufactureDesc, Integer.parseInt(ph.getManufacturecheck()));
-			    System.out.println("BIN IN DEN IF BEDINUNGEN manu");
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getRamcheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getRam())) {
-			    System.out.println("BIN IN DEN IF BEDINUNGEN ram");
-	
-		    	query.addAttribute(ramDesc, ramDesc.getAttribute(ph.getRam()));
-			    smartphone.getActiveAmalgamFct().setWeight(ramDesc, Integer.parseInt(ph.getRamcheck()));
-			    System.out.println("BIN IN DEN IF BEDINUNGEN ram");
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getPricecheck()) > 0) {
-		    if(Integer.parseInt(ph.getPrice()) >= 0) {
-		    	query.addAttribute(priceDesc, priceDesc.getAttribute(ph.getPrice()));
-			    smartphone.getActiveAmalgamFct().setWeight(priceDesc, Integer.parseInt(ph.getPricecheck()));
-			    System.out.println("BIN IN DEN IF BEDINUNGEN price");
-		    }
-	    }
-	    if(Integer.parseInt(ph.getSizecheck()) > 0) {
-		    if(Integer.parseInt(ph.getSize()) >= 0) {
-		    	query.addAttribute(sizeDesc, sizeDesc.getAttribute(ph.getSize()));
-			    smartphone.getActiveAmalgamFct().setWeight(sizeDesc, Integer.parseInt(ph.getSizecheck()));
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getDisplaytypecheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getDisplaytype())) {
-		    	query.addAttribute(displaytypeDesc, displaytypeDesc.getAttribute(ph.getDisplaytype()));
-			    smartphone.getActiveAmalgamFct().setWeight(displaytypeDesc, Integer.parseInt(ph.getDisplaytypecheck()));
-			    System.out.println("BIN IN DEN IF BEDINUNGEN price");
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getCpucheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getCpu())) {
-		    	query.addAttribute(cpuDesc, cpuDesc.getAttribute(ph.getCpu()));
-			    smartphone.getActiveAmalgamFct().setWeight(cpuDesc, Integer.parseInt(ph.getCpucheck()));
-			    System.out.println("BIN IN DEN IF BEDINUNGEN price");
-	
-		    }
-	    }
-	    if(Integer.parseInt(ph.getWeightcheck()) > 0) {
-		    if(Integer.parseInt(ph.getWeight()) >= 0) {
-		    	query.addAttribute(weightDesc, weightDesc.getAttribute(ph.getWeight()));
-		    	smartphone.getActiveAmalgamFct().setWeight(weightDesc, Integer.parseInt(ph.getWeightcheck()));
-		    }
-	    }
-	    if(Integer.parseInt(ph.getAkkukapacheck()) > 0) {
-		    if(Integer.parseInt(ph.getAkkukapa()) >= 0) {
-		    	query.addAttribute(akkukapaDesc, akkukapaDesc.getAttribute(ph.getAkkukapa()));
-		    	smartphone.getActiveAmalgamFct().setWeight(akkukapaDesc, Integer.parseInt(ph.getAkkukapacheck()));
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getKameraMegapixelcheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getKameraMegapixel())) {
-		    	if("wichtig".equals(ph.getFrontkameraMegapixel())) {
-		    		query.addAttribute(kameramegapixelDesc, kameramegapixelDesc.getAttribute(16));
-		    	}else {
-		    		query.addAttribute(kameramegapixelDesc, kameramegapixelDesc.getAttribute(42));
-		    	}
-		    	smartphone.getActiveAmalgamFct().setWeight(kameramegapixelDesc, Integer.parseInt(ph.getKameraMegapixelcheck()));
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getFrontkameraMegapixelcheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getFrontkameraMegapixel())) {
-		    	if("wichtig".equals(ph.getFrontkameraMegapixel())) {
-		    		query.addAttribute(frontkameraDesc, frontkameraDesc.getAttribute(16));
-		    	}else {
-		    		query.addAttribute(frontkameraDesc, frontkameraDesc.getAttribute(32));
-		    	}
-		    	smartphone.getActiveAmalgamFct().setWeight(frontkameraDesc, Integer.parseInt(ph.getFrontkameraMegapixelcheck()));
-		    }	
-	    }
-	    
-	    if(Integer.parseInt(ph.getMemoryslotcheck()) > 0) {
-		    if(!"keineangabe".equals(ph.getMemoryslot())) {
-		    	query.addAttribute(memoryslotDesc, memoryslotDesc.getAttribute(ph.getMemoryslot()));
-		    	smartphone.getActiveAmalgamFct().setWeight(memoryslotDesc, Integer.parseInt(ph.getMemoryslotcheck()));
-			    System.out.println("BIN IN DEN IF BEDINUNGEN price");
-	
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getMemorycheck()) > 0) {
-		    if(Integer.parseInt(ph.getMemory()) >= 0) {
-		    	query.addAttribute(memoryDesc, memoryDesc.getAttribute(ph.getMemory()));
-		    	smartphone.getActiveAmalgamFct().setWeight(memoryDesc, Integer.parseInt(ph.getMemorycheck()));
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getThicknesscheck()) > 0) {
-		    if(Integer.parseInt(ph.getThickness()) >= 0) {
-		    	query.addAttribute(thicknessDesc, thicknessDesc.getAttribute(ph.getThickness())); 
-		    	smartphone.getActiveAmalgamFct().setWeight(thicknessDesc, Integer.parseInt(ph.getThicknesscheck()));
-		    }
-	    }
-	    
-	    if(Integer.parseInt(ph.getNfccheck()) > 0) {
-		    query.addAttribute(nfcDesc, nfcDesc.getAttribute(ph.getNfc()));
-	    	smartphone.getActiveAmalgamFct().setWeight(nfcDesc, Integer.parseInt(ph.getNfccheck()));
-	    }
+	 //   if(Integer.parseInt(ph.getNfccheck()) > 0) {
+	//	    query.addAttribute(nfcDesc, nfcDesc.getAttribute(ph.getNfc()));
+	  //  	smartphone.getActiveAmalgamFct().setWeight(nfcDesc, Integer.parseInt(ph.getNfccheck()));
+	  //  }
 	    
 	    System.out.println("##########################ICH WAR HIER IM RETRIEVAL######################");
 	    
@@ -194,49 +126,47 @@ public class RetrievalTask {
 	    List <Pair<Instance, Similarity>> result = retrieve.getResult();
 
 
-	    for (int i = 0; i < ph.getAnzahl(); i++) {
+	    for (int i = 0; i < 5; i++) {
 		    System.out.println("##########################"+i+"######################");
-	    	Instance obj = smartphone.getInstance(result.get(i).getFirst().getName());
+	    	Instance obj = soccerplayer.getInstance(result.get(i).getFirst().getName());
 	    	System.out.println(obj);
 	    	System.out.println(retrieve.getResult().get(i).getSecond().getValue() + " - Ähnlichkeit");
-	    	System.out.println(obj.getAttForDesc(manufactureDesc).getValueAsString() + " - Manufacture");
-	    	System.out.println(obj.getAttForDesc(modelDesc).getValueAsString() + " - Model");
-	    	System.out.println(obj.getAttForDesc(resolutionDesc).getValueAsString() + " - Resolution");
-	    	System.out.println(obj.getAttForDesc(ramDesc).getValueAsString() + " - RAM");
-	    	System.out.println(obj.getAttForDesc(priceDesc).getValueAsString() + " - Price");
-	    	System.out.println(obj.getAttForDesc(sizeDesc).getValueAsString() + " - Size");
-	    	System.out.println(obj.getAttForDesc(displaytypeDesc).getValueAsString() + " - Displaytype");
-	    	System.out.println(obj.getAttForDesc(cpuDesc).getValueAsString() + " - CPU");
-	    	System.out.println(obj.getAttForDesc(weightDesc).getValueAsString() + " - weight");
-	    	System.out.println(obj.getAttForDesc(akkukapaDesc).getValueAsString() + " - Akkukapazität");
-	    	System.out.println(obj.getAttForDesc(frontkameraDesc).getValueAsString() + " - Frontkamera");
-	    	System.out.println(obj.getAttForDesc(memoryslotDesc).getValueAsString() + " - Memoryslot");
-	    	System.out.println(obj.getAttForDesc(memoryDesc).getValueAsString() + " - memory");
-	    	System.out.println(obj.getAttForDesc(nfcDesc).getValueAsString() + " - NFC");
-	    	System.out.println(obj.getAttForDesc(thicknessDesc).getValueAsString() + " - Thickness");
+	    	System.out.println(obj.getAttForDesc(alterDesc).getValueAsString() + " - Alter");
+	    	System.out.println(obj.getAttForDesc(nameDesc).getValueAsString() + " - Namw");
+	    	System.out.println(obj.getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString() + " - overallAbgefangeneBaelleDesc");
+	    	System.out.println(obj.getAttForDesc(overallAssistsDesc).getValueAsString() + " - overllAssistsDesc");
+	    	System.out.println(obj.getAttForDesc(overallBallEroberungenDesc).getValueAsString() + " - overallBallEroberungen");
+	    	System.out.println(obj.getAttForDesc(overallBallverlustDesc).getValueAsString() + " - overallBallverlust");
+	    	System.out.println(obj.getAttForDesc(overallBewertungDesc).getValueAsString() + " - overallBewertung");
+	    	System.out.println(obj.getAttForDesc(overallBlockSchussDesc).getValueAsString() + " - overallBlockSchuss");
+	    	System.out.println(obj.getAttForDesc(overallDribblingsDesc).getValueAsString() + " - overallDribblings");
+	    	System.out.println(obj.getAttForDesc(overallEinsatzquoteDesc).getValueAsString() + " - overallEinsatzquote");
+	    	System.out.println(obj.getAttForDesc(overallFoulsDesc).getValueAsString() + " - overallFouls");
+	    	System.out.println(obj.getAttForDesc(overallGeklaerteBaelleDesc).getValueAsString() + " - overallGeklaerteBaelle");
+	    	System.out.println(obj.getAttForDesc(overallGoalsDesc).getValueAsString() + " - overallGoals");
+	    	System.out.println(obj.getAttForDesc(overallKP90Desc).getValueAsString() + " - overallKP90");
+	    	System.out.println(obj.getAttForDesc(overallkreierteGrosschancenDesc).getValueAsString() + " - overallkreierteGrosschancen");
+	    	System.out.println(obj.getAttForDesc(overallMinPlayedDesc).getValueAsString() + " - overallMinPlayed");
+	    	System.out.println(obj.getAttForDesc(overallPassquoteDesc).getValueAsString() + " - overallPassquote");	    	
+	    	System.out.println(obj.getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString() + " - overallSchussgenauigkeit");	    	
+	    	System.out.println(obj.getAttForDesc(overallSH90Desc).getValueAsString() + " - overallSH90");	    	
+	    	System.out.println(obj.getAttForDesc(overallTacklingquoteDesc).getValueAsString() + " - overallTacklingquote");	    	
+	    	System.out.println(obj.getAttForDesc(overallZweikampfquoteDesc).getValueAsString() + " - overallZweikampfquote");	    	
+	    	System.out.println(obj.getAttForDesc(overallxADesc).getValueAsString() + " - overallxA");	    	
+	    	System.out.println(obj.getAttForDesc(overallxA90Desc).getValueAsString() + " - overallxA90");	    	
+	    	System.out.println(obj.getAttForDesc(overallxGDesc).getValueAsString() + " - overallxG");
+	    	System.out.println(obj.getAttForDesc(overallxG90Desc).getValueAsString() + " - overallxG90");
+	    	System.out.println(obj.getAttForDesc(positionDesc).getValueAsString() + " - position");
+	    	System.out.println(obj.getAttForDesc(spieltagbewertungDesc).getValueAsString() + " - spieltagbewertung");
 		    System.out.println("################################################");
 		    
-		    RetrievalCase phoned = new RetrievalCase(
-		    		Double.toString(retrieve.getResult().get(i).getSecond().getValue()),
-		    		obj.getAttForDesc(manufactureDesc).getValueAsString(),
-		    		obj.getAttForDesc(modelDesc).getValueAsString(),
-		    		obj.getAttForDesc(resolutionDesc).getValueAsString(),
-		    		obj.getAttForDesc(priceDesc).getValueAsString(),
-		    		obj.getAttForDesc(weightDesc).getValueAsString(),
-		    		obj.getAttForDesc(sizeDesc).getValueAsString(),
-		    		obj.getAttForDesc(displaytypeDesc).getValueAsString(),
-		    		obj.getAttForDesc(cpuDesc).getValueAsString(),
-		    		obj.getAttForDesc(ramDesc).getValueAsString(),
-		    		obj.getAttForDesc(akkukapaDesc).getValueAsString(),
-		    		obj.getAttForDesc(kameramegapixelDesc).getValueAsString(),
-		    		obj.getAttForDesc(frontkameraDesc).getValueAsString(),
-		    		obj.getAttForDesc(memoryslotDesc).getValueAsString(),
-		    		obj.getAttForDesc(memoryDesc).getValueAsString(),
-		    		obj.getAttForDesc(nfcDesc).getValueAsString(),
-		    		obj.getAttForDesc(thicknessDesc).getValueAsString()
-		    		);		
+		  //  RetrievalCase phoned = new RetrievalCase(
+		    //		Double.toString(retrieve.getResult().get(i).getSecond().getValue()),
+		    //		obj.getAttForDesc(manufactureDesc).getValueAsString(),
+		
+		//    		);		
 		    
-		    dataStorage.getSharedDataStorage().getRetrievalphoneList().add(phoned);
+		  //  dataStorage.getSharedDataStorage().getRetrievalphoneList().add(phoned);
 		    
 	    }
 	    

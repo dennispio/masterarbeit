@@ -54,7 +54,7 @@ public class FilterAgent extends Agent {
             ACLMessage message = receive(mt);
                       
             if (message != null) {
-            	task.filterData(DataStorage.getSharedDataStorage().getPhoneList());
+            	task.filterData(DataStorage.getSharedDataStorage().getSoccerplayerList());
         		dataStorage.getMetaData().setLastTask("FILTER_AGENT");
         		dataStorage.getMetaData().addTaskToHistorie(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()), "FILTER_AGENT");
             	final ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);

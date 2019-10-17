@@ -31,33 +31,52 @@ public class CbrTask {
 	}
 	
 	public void saveCases() {
-		ArrayList<Case> phonearray = DataStorage.getSharedDataStorage().getCases();
+		ArrayList<Case> playerarray = DataStorage.getSharedDataStorage().getCases();
+		System.out.println("iuch bin in CbrTask");
+		
+		
+		for(Case element : DataStorage.getSharedDataStorage().getCases()){ 
+				System.out.println("Spieler: "  +element);
+				
+			}
     	
-    	Concept smartphone = DataStorage.getSharedDataStorage().getProject().getConceptByID("Smartphone");
+    	Concept soccerplayer = DataStorage.getSharedDataStorage().getProject().getConceptByID("Soccerplayer");
 
     	ICaseBase cb = DataStorage.getSharedDataStorage().getCasebasee();
     	//Collection<Instance> instances = smartphone.getAllInstances();
     	int count = 0;
-		for(Case c: phonearray) {
+		for(Case c: playerarray) {
 			try {
-				Instance i = smartphone.addInstance(smartphone.getName() + " #" + (cb.getCases().size()+1));
-				i.addAttribute("manufacture", c.getManufacture());
-				i.addAttribute("model", c.getModel());
-				i.addAttribute("resolution", c.getResolution());
-				i.addAttribute("price", c.getPrice());
-				i.addAttribute("weight", c.getWeight());
-				i.addAttribute("size", c.getSize());
-				i.addAttribute("displaytype", c.getDisplaytype());
-				i.addAttribute("cpu", c.getCpu());
-				i.addAttribute("arbeitsspeicher", c.getRam());
-				i.addAttribute("akkukapa", c.getAkkukapa());
-				i.addAttribute("kameramegapixel", c.getKameraMegapixel());
-				i.addAttribute("frontkameramegapixel", c.getFrontkameraMegapixel());
-				i.addAttribute("memoryslot", c.getMemoryslot());
-				i.addAttribute("memory", c.getMemory());
-				i.addAttribute("nfc", c.getNfc());
-				i.addAttribute("thickness", c.getThickness());
-				
+				Instance i = soccerplayer.addInstance(soccerplayer.getName() + " #" + (cb.getCases().size()+1));
+				i.addAttribute("Alter", c.getAlter());
+				i.addAttribute("Name", c.getName());
+				i.addAttribute("OverallAbgefangeneBaelle", c.getOverallAbgefangeneBaelle());
+				i.addAttribute("OverallAssists", c.getOverallAssists());
+				i.addAttribute("OverallBallEroberungen", c.getOverallBallEroberungen());
+				i.addAttribute("OverallBallverlust", c.getOverallBallverlust());
+				i.addAttribute("OverallBewertung", c.getOverallBewertung());
+				i.addAttribute("OverallBlockSchuss", c.getOverallBlockSchuss());
+				i.addAttribute("OverallDribblings", c.getOverallDribblings());
+				i.addAttribute("OverallEinsatzquote", c.getOverallEinsatzquote());
+				i.addAttribute("OverallFouls", c.getOverallFouls());
+				i.addAttribute("OverallGeklaerteBaelle", c.getOverallGeklaerteBaelle());
+				i.addAttribute("OverallGoals", c.getOverallGoals());
+				i.addAttribute("OverallKP90", c.getOverallKPNEUN());
+				i.addAttribute("OverallKreierteGrosschancen", c.getOverallkreierteGrosschancen());
+				i.addAttribute("OverallMinPlayed", c.getOverallMinPlayed());
+				i.addAttribute("OverallPassquote", c.getOverallPassquote());
+				i.addAttribute("OverallSchussgenauigkeit", c.getOverallSchussgenauigkeit());
+				i.addAttribute("OverallSh90", c.getOverallSHNeun());
+				i.addAttribute("OverallTacklingquote", c.getOverallTacklingQuote());
+				i.addAttribute("OverallTorschussVorlagen", c.getOverallTorschussVorlagen());
+				i.addAttribute("OverallZweikampfquote", c.getOverallZweikampfquote());
+				i.addAttribute("OverallxA", c.getOverallxA());
+				i.addAttribute("OverallxA90", c.getOverallxANEUN());
+				i.addAttribute("OverallxG", c.getOverallxG());
+				i.addAttribute("OverallxG90", c.getOverallxGNEUN());
+				i.addAttribute("Position", c.getPosition());
+				i.addAttribute("SpieltagBewertung", c.getSpieltagbewertung());
+		
 				cb.addCase(i);
 				count++;
 			} catch (ParseException e) {
@@ -72,9 +91,9 @@ public class CbrTask {
 
 		DataStorage.getSharedDataStorage().setAddedCases(count);
 		Collection<Instance> cases = cb.getCases();
-//		for(Instance i : cases) {
-//			System.out.println(i.getAttributes());
-//			System.out.println(i.getName());
-//		}
+		for(Instance i : cases) {
+			System.out.println(i.getAttributes());
+			System.out.println(i.getName());
+		}
 	}
 }

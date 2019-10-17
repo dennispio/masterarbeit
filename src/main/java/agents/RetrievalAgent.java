@@ -75,9 +75,9 @@ public class RetrievalAgent extends Agent {
             if (message != null) {
             		try {
                         System.out.println("bin in RETRIEVALTASK");
-						Serializable phone = message.getContentObject();
-						System.out.println(phone.toString());
-						retrievalTask.retrievalCases(phone);
+						Serializable player = message.getContentObject();
+						System.out.println(player.toString());
+						retrievalTask.retrievalCases(player);
 
 					} catch (UnreadableException e) {
 						// TODO Auto-generated catch block

@@ -43,8 +43,19 @@
       <url>https://repo.spring.io/libs-release</url>
     </repository>
   </repositories>
-
   <dependencies>
+  
+	  <dependency>
+	    <groupId>net.sourceforge.htmlunit</groupId>
+	    <artifactId>htmlunit</artifactId>
+	    <version>2.36.0</version>
+	</dependency>
+  	<dependency>
+  		<!-- jsoup HTML parser library @ https://jsoup.org/ -->
+  		<groupId>org.jsoup</groupId>
+  		<artifactId>jsoup</artifactId>
+ 		<version>1.12.1</version>
+	</dependency>
 	<dependency>
 	    <groupId>javax.xml.bind</groupId>
 	    <artifactId>jaxb-api</artifactId>

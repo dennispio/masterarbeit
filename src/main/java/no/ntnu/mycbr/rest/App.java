@@ -5,10 +5,15 @@ import jade.wrapper.StaleProxyException;
 import no.ntnu.mycbr.CBREngine;
 import objects.DataStorage;
 
+import java.io.IOException;
+
+import org.json.JSONException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import agentTasks.APICrawler;
+import agentTasks.FilterTask;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
@@ -35,6 +40,7 @@ public class App {
 
     public static void main(String[] args) throws StaleProxyException {
     	DataStorage dataStorage = DataStorage.getSharedDataStorage();
+   
     	//Start main container, CBR engine and Spring
 		MainContainer maincontainer = new MainContainer();
 		maincontainer.startMainContainer();

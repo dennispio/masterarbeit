@@ -54,63 +54,36 @@ public class FonoApiAgent extends Agent {
             mt = MessageTemplate.MatchConversationId("FONOAPI_AGENT");
             ACLMessage message = receive(mt);
             if (message != null) {
-                try {
-        		   	DataStorage dataStorage = DataStorage.getSharedDataStorage();
-        			Map<String, String> customQuery = dataStorage.getCustomQuery();
+                DataStorage dataStorage = DataStorage.getSharedDataStorage();
+				Map<String, String> customQuery = dataStorage.getCustomQuery();
 
-        			if(!customQuery.get("sony").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("sony");
-        			}
-         			if(!customQuery.get("zte").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("zte");
-        			}
-         			if(!customQuery.get("asus").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("asus");
-        			}
-         			if(!customQuery.get("apple").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("apple");
-        			}
-         			if(!customQuery.get("oneplus").equalsIgnoreCase("true")) {
-         				System.out.println("oneplus");
-    					apiCrawler.crawlApi("oneplus");
-        			}
-         			if(!customQuery.get("htc").equalsIgnoreCase("true")) {
-         				System.out.println("HTC");
-    					apiCrawler.crawlApi("htc");
-        			}
-         			if(!customQuery.get("samsung").equalsIgnoreCase("true")) {
-         				System.out.println("SAMSUNG");
-    					apiCrawler.crawlApi("samsung");
-        			}
-         			if(!customQuery.get("lg").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("lg");
-        			}
-         			if(!customQuery.get("motorola").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("motorola");
-        			}
-         			if(!customQuery.get("nokia").equalsIgnoreCase("true")) {
-    					apiCrawler.crawlApi("nokia");
-        			}
-
-		    		dataStorage.getMetaData().setLastTask("FONOAPI_AGENT");
-		    		dataStorage.getMetaData().addTaskToHistorie(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()), "FONOAPI_AGENT");
-					System.out.println(dataStorage.getPhoneList());
-			        final ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-			        AID theAgent = new AID("FILTER_AGENT", false);
-			        msg.addReceiver(theAgent);
-			        msg.setConversationId("FILTER_AGENT");
-			        myAgent.send(msg);
-			        ACLMessage res = myAgent.receive();
-			        if (res != null) {
-			            System.out.println(res.getContent());
-			        }
+    		//	if(!customQuery.get("sony").equalsIgnoreCase("true")) {
+			//		apiCrawler.crawlApi("sony");
+    		//	}
+				
+				try {
+					apiCrawler.crawlApi();
+					dataStorage.getMetaData().setLastTask("FONOAPI_AGENT");
+					dataStorage.getMetaData().addTaskToHistorie(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()), "FONOAPI_AGENT");
+					System.out.println(dataStorage.getSoccerplayerList());
+					final ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+					AID theAgent = new AID("FILTER_AGENT", false);
+					msg.addReceiver(theAgent);
+					msg.setConversationId("FILTER_AGENT");
+					myAgent.send(msg);
+					ACLMessage res = myAgent.receive();
+					if (res != null) {
+					    System.out.println(res.getContent());
+					}
+					else {
+						block();
+	            }  
 				} catch (JSONException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-            } else {
-                block();
-            }    
-        }         
+						 
+            }         
+        }
     }
 }

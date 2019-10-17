@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project name="soccerplayer" author="" >
+<svs>
+  <sv name="_unknown_"/>
+  <sv name="_undefined_"/>
+  <sv name="_others_"/>
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="_unknown_">
+</qsym>
+<qsym name="_undefined_">
+</qsym>
+<qsym name="_others_">
+</qsym>
+</fct>
+</svs>
+<model>
+  <concept name="Soccerplayer">
+    <desc name="SpieltagBewertung" type="Float" min="0.0" max="6.0" mult="false" >
+      <fct name="SBSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="SpieltagBewertungSim" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallKreierteGrosschancen" type="Float" min="0.0" max="3.0" mult="false" >
+      <fct name="OverallKrGrSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="2.9" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OKGSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallPassquote" type="Float" min="0.0" max="101.0" mult="false" >
+      <fct name="OPSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallPassquoteSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="100.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallTorschussVorlagen" type="Float" min="0.0" max="8.0" mult="false" >
+      <fct name="OTVSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallTorVorSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="-0.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+        <point x="7.9" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallSchussgenauigkeit" type="Float" min="0.0" max="101.0" mult="false" >
+      <fct name="OSSIM" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallSchusssim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="100.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="Name" type="String" mult="false" >
+      <fct name="default function" type="String" symm="true" config="EQUALITY" n="3" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="OverallMinPlayed" type="Integer" min="0" max="40000" mult="false" >
+      <fct name="OMPSIM" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-40000.0" y="0.0" />
+        <point x="0.0" y="1.0" />
+        <point x="40000.0" y="0.0" />
+      </fct>
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="OverallMinSim" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-40000.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+        <point x="39999.0" y="1.0" />
+        <point x="40000.0" y="0.0" />
+      </fct>
+    </desc>
+    <desc name="OverallZweikampfquote" type="Float" min="0.0" max="101.0" mult="false" >
+      <fct name="OverallZweikampfsim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="100.0" y="1.0" />
+      </fct>
+      <fct name="OZQSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallAbgefangeneBaelle" type="Float" min="0.0" max="5.0" mult="false" >
+      <fct name="OverallAbgeBaeSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="4.9" y="1.0" />
+      </fct>
+      <fct name="OABS" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallAssists" type="Integer" min="0" max="30" mult="false" >
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="OASIM" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-30.0" y="0.0" />
+        <point x="0.0" y="1.0" />
+        <point x="30.0" y="0.0" />
+      </fct>
+      <fct name="OverallAsistsSim" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-30.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+        <point x="30.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallBewertung" type="Float" min="1.0" max="6.0" mult="false" >
+      <fct name="OBESIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="OverallBewertungSim" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallBallEroberungen" type="Float" min="0.0" max="5.0" mult="false" >
+      <fct name="OBE" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="OverallBallErobSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="4.9" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallGoals" type="Integer" min="0" max="40" mult="false" >
+      <fct name="OverallGoalsSim" type="AdvancedInteger" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-40.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+        <point x="39.0" y="1.0" />
+        <point x="40.0" y="0.0" />
+      </fct>
+      <fct name="OGSIM" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-40.0" y="0.0" />
+        <point x="0.0" y="1.0" />
+        <point x="40.0" y="0.0" />
+      </fct>
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="OverallFouls" type="Float" min="0.0" max="4.0" mult="false" >
+      <fct name="OverallFoulsSim" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OFSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallGeklaerteBaelle" type="Float" min="0.0" max="10.0" mult="false" >
+      <fct name="OverallGeklaeBaeSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="9.9" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OGBSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="Position" type="Symbol" mult="false" >
+      <symbol value="ST" />
+      <symbol value="TW" />
+      <symbol value="LMF" />
+      <symbol value="RV" />
+      <symbol value="DM" />
+      <symbol value="OMF" />
+      <symbol value="LV" />
+      <symbol value="RMF" />
+      <symbol value="IV" />
+      <symbol value="ZMF" />
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="ST">
+<csym name="TW" sim="0.2"/>
+<csym name="LMF" sim="0.5"/>
+<csym name="RV" sim="0.45"/>
+<csym name="DM" sim="0.2"/>
+<csym name="OMF" sim="0.7"/>
+<csym name="LV" sim="0.45"/>
+<csym name="RMF" sim="0.5"/>
+<csym name="IV" sim="0.2"/>
+<csym name="ZMF" sim="0.5"/>
+</qsym>
+<qsym name="TW">
+<csym name="ST" sim="0.2"/>
+<csym name="LMF" sim="0.2"/>
+<csym name="RV" sim="0.5"/>
+<csym name="DM" sim="0.6"/>
+<csym name="OMF" sim="0.4"/>
+<csym name="LV" sim="0.5"/>
+<csym name="RMF" sim="0.2"/>
+<csym name="IV" sim="0.7"/>
+<csym name="ZMF" sim="0.45"/>
+</qsym>
+<qsym name="LMF">
+<csym name="ST" sim="0.5"/>
+<csym name="TW" sim="0.2"/>
+<csym name="RV" sim="0.65"/>
+<csym name="DM" sim="0.4"/>
+<csym name="OMF" sim="0.7"/>
+<csym name="LV" sim="0.7"/>
+<csym name="RMF" sim="0.85"/>
+<csym name="IV" sim="0.3"/>
+<csym name="ZMF" sim="0.6"/>
+</qsym>
+<qsym name="RV">
+<csym name="ST" sim="0.45"/>
+<csym name="TW" sim="0.5"/>
+<csym name="LMF" sim="0.65"/>
+<csym name="DM" sim="0.6"/>
+<csym name="OMF" sim="0.7"/>
+<csym name="LV" sim="0.9"/>
+<csym name="RMF" sim="0.7"/>
+<csym name="IV" sim="0.7"/>
+<csym name="ZMF" sim="0.7"/>
+</qsym>
+<qsym name="DM">
+<csym name="ST" sim="0.2"/>
+<csym name="TW" sim="0.6"/>
+<csym name="LMF" sim="0.4"/>
+<csym name="RV" sim="0.6"/>
+<csym name="OMF" sim="0.65"/>
+<csym name="LV" sim="0.6"/>
+<csym name="RMF" sim="0.4"/>
+<csym name="IV" sim="0.8"/>
+<csym name="ZMF" sim="0.9"/>
+</qsym>
+<qsym name="OMF">
+<csym name="ST" sim="0.9"/>
+<csym name="TW" sim="0.4"/>
+<csym name="LMF" sim="0.7"/>
+<csym name="RV" sim="0.7"/>
+<csym name="DM" sim="0.65"/>
+<csym name="LV" sim="0.6"/>
+<csym name="RMF" sim="0.7"/>
+<csym name="IV" sim="0.5"/>
+<csym name="ZMF" sim="0.75"/>
+</qsym>
+<qsym name="LV">
+<csym name="ST" sim="0.45"/>
+<csym name="TW" sim="0.5"/>
+<csym name="LMF" sim="0.7"/>
+<csym name="RV" sim="0.9"/>
+<csym name="DM" sim="0.6"/>
+<csym name="OMF" sim="0.6"/>
+<csym name="RMF" sim="0.65"/>
+<csym name="IV" sim="0.7"/>
+<csym name="ZMF" sim="0.4"/>
+</qsym>
+<qsym name="RMF">
+<csym name="ST" sim="0.5"/>
+<csym name="TW" sim="0.2"/>
+<csym name="LMF" sim="0.85"/>
+<csym name="RV" sim="0.7"/>
+<csym name="DM" sim="0.4"/>
+<csym name="OMF" sim="0.7"/>
+<csym name="LV" sim="0.65"/>
+<csym name="IV" sim="0.3"/>
+<csym name="ZMF" sim="0.6"/>
+</qsym>
+<qsym name="IV">
+<csym name="ST" sim="0.2"/>
+<csym name="TW" sim="0.7"/>
+<csym name="LMF" sim="0.3"/>
+<csym name="RV" sim="0.7"/>
+<csym name="DM" sim="0.8"/>
+<csym name="OMF" sim="0.5"/>
+<csym name="LV" sim="0.7"/>
+<csym name="RMF" sim="0.3"/>
+<csym name="ZMF" sim="0.65"/>
+</qsym>
+<qsym name="ZMF">
+<csym name="ST" sim="0.7"/>
+<csym name="TW" sim="0.45"/>
+<csym name="LMF" sim="0.6"/>
+<csym name="RV" sim="0.7"/>
+<csym name="DM" sim="0.9"/>
+<csym name="OMF" sim="0.75"/>
+<csym name="LV" sim="0.6"/>
+<csym name="RMF" sim="0.6"/>
+<csym name="IV" sim="0.65"/>
+</qsym>
+</fct>
+    </desc>
+    <desc name="OverallxA" type="Float" min="0.0" max="3.0" mult="false" >
+      <fct name="OverallxASim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="2.9" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OXASIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallxA90" type="Float" min="0.0" max="3.0" mult="false" >
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallxA90Sim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="2.9" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallDribblings" type="Float" min="0.0" max="101.0" mult="false" >
+      <fct name="OverallDribblingsSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="100.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="ODSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallxG" type="Float" min="0.0" max="8.0" mult="false" >
+      <fct name="OverallxGsim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="7.9" y="1.0" />
+      </fct>
+      <fct name="OXGSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallSh90" type="Float" min="0.0" max="10.0" mult="false" >
+      <fct name="OverallSh90Sim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="9.9" y="1.0" />
+      </fct>
+      <fct name="OSH90SIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallEinsatzquote" type="Float" min="0.0" max="101.0" mult="false" >
+      <fct name="OESIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallEinsatzSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="100.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallBallverlust" type="Float" min="0.0" max="10.0" mult="false" >
+      <fct name="OverallBallverlustSim" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OBVSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="Alter" type="Integer" min="0" max="40" mult="false" >
+      <fct name="altersim" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+        <point x="-40.0" y="0.0" />
+        <point x="0.0" y="1.0" />
+        <point x="40.0" y="0.0" />
+      </fct>
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="OverallBlockSchuss" type="Float" min="0.0" max="2.0" mult="false" >
+      <fct name="OBSSIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="OverallBlockSchussSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="1.9" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallxG90" type="Float" min="0.0" max="5.0" mult="false" >
+      <fct name="OXG90SIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="OverallxG90Sim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="4.9" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallKP90" type="Float" min="0.0" max="10.0" mult="false" >
+      <fct name="OKP90SIM" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallKP90sim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="9.9" y="1.0" />
+      </fct>
+    </desc>
+    <desc name="OverallTacklingquote" type="Float" min="0.0" max="101.0" mult="false" >
+      <fct name="OTQSIM2" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
+      </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="OverallTacklingSim" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="0.0" />
+        <point x="100.0" y="1.0" />
+      </fct>
+    </desc>
+    <amalgam name="default function" type="EUCLIDEAN" active="true" >
+      <entry name="SpieltagBewertung" active="true" fct="SBSIM" weight="1.0"/>
+      <entry name="OverallKreierteGrosschancen" active="true" fct="OKGSIM" weight="1.0"/>
+      <entry name="OverallPassquote" active="true" fct="OPSIM" weight="1.0"/>
+      <entry name="OverallTorschussVorlagen" active="true" fct="OTVSIM" weight="1.0"/>
+      <entry name="OverallSchussgenauigkeit" active="true" fct="OSSIM" weight="1.0"/>
+      <entry name="Name" active="true" fct="default function" weight="1.0"/>
+      <entry name="OverallMinPlayed" active="true" fct="OMPSIM" weight="1.0"/>
+      <entry name="OverallZweikampfquote" active="true" fct="OZQSIM" weight="1.0"/>
+      <entry name="OverallAbgefangeneBaelle" active="true" fct="OABS" weight="1.0"/>
+      <entry name="OverallAssists" active="true" fct="OASIM" weight="1.0"/>
+      <entry name="OverallBewertung" active="true" fct="OBESIM" weight="1.0"/>
+      <entry name="OverallBallEroberungen" active="true" fct="OBE" weight="1.0"/>
+      <entry name="OverallGoals" active="true" fct="OGSIM" weight="1.0"/>
+      <entry name="OverallFouls" active="true" fct="OFSIM" weight="1.0"/>
+      <entry name="OverallGeklaerteBaelle" active="true" fct="OGBSIM" weight="1.0"/>
+      <entry name="Position" active="true" fct="default function" weight="1.0"/>
+      <entry name="OverallxA" active="true" fct="OXASIM" weight="1.0"/>
+      <entry name="OverallxA90" active="true" fct="OverallxA90Sim" weight="1.0"/>
+      <entry name="OverallDribblings" active="true" fct="ODSIM" weight="1.0"/>
+      <entry name="OverallxG" active="true" fct="OXGSIM" weight="1.0"/>
+      <entry name="OverallSh90" active="true" fct="OSH90SIM" weight="1.0"/>
+      <entry name="OverallEinsatzquote" active="true" fct="OESIM" weight="1.0"/>
+      <entry name="OverallBallverlust" active="true" fct="OBVSIM" weight="1.0"/>
+      <entry name="Alter" active="true" fct="altersim" weight="1.0"/>
+      <entry name="OverallBlockSchuss" active="true" fct="OBSSIM" weight="1.0"/>
+      <entry name="OverallxG90" active="true" fct="OXG90SIM" weight="1.0"/>
+      <entry name="OverallKP90" active="true" fct="OKP90SIM" weight="1.0"/>
+      <entry name="OverallTacklingquote" active="true" fct="OTQSIM2" weight="1.0"/>
+    </amalgam>
+  </concept>
+</model>
+<hierarchy>
+  <fct name="default function" type="Taxonomy" mt="PARTNER_QUERY" r="REUSE" t="MAX" qconfig="INNER_NODES_ANY" cconfig="INNER_NODES_ANY" top="inheritanceDesc" sim="0.0" symm="true" >
+    <node name="Soccerplayer" sim="1.0" parent="inheritanceDesc" />
+  </fct>
+</hierarchy>
+</Project>

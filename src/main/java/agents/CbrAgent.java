@@ -34,7 +34,6 @@ import jade.tools.logging.ontology.GetAllLoggers;
 import jade.wrapper.StaleProxyException;
 import objects.Case;
 import objects.DataStorage;
-import objects.Phone;
 
 public class CbrAgent extends Agent {
 	private static final long serialVersionUID = 1L;
@@ -77,7 +76,7 @@ public class CbrAgent extends Agent {
                       
             if (message != null) {
             	cbrTask.saveCases();
-    		    dataStorage.getPhoneList().clear();
+    		    dataStorage.getSoccerplayerList().clear();
 
             } else {
                 block();

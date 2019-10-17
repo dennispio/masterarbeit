@@ -2,154 +2,268 @@ package objects;
 
 public class Case {
 	
-	private String manufacture;
-	private String model;
-	private String resolution;
-	private float price;
-	private float weight;
-	private float size;
-	private String displaytype;
-	private String cpu;
-	private int ram;
-	private float akkukapa;
-	private float kameraMegapixel;
-	private float frontkameraMegapixel;
-	private String memoryslot;
-	private float memory;
-	private int nfc;
-	private float thickness;
+	private int alter;
+	//private int lastAssists;
+	//private int lastGoals;
+	//private float lastKPNEUN;
+	//private int lastMinPlayed;
+	//private float lastSh90;
+	//private float lastxA;
+//	private float lastxANEUN;
+//	private float lastxG;
+//	private float lastxGNEUN;
+	private String name;
+	private float overallAbgefangeneBaelle;
+	private int overallAssists;
+	private float overallBallEroberungen;
+	private float overallBallverlust;
+	private float overallBewertung;
+	private float overallBlockSchuss;
+	private float overallDribblings;
+	private float overallEinsatzquote;
+	private float overallFouls;
+	private float overallGeklaerteBaelle;
+	private int overallGoals;
+	private float overallKPNEUN;
+	private float overallkreierteGrosschancen;
+	private int overallMinPlayed;
+	private float overallPassquote;
+	private float overallSchussgenauigkeit;
+	private float overallSHNeun;
+	private float overallTacklingQuote;
+	private float overallTorschussVorlagen;
+	private float overallZweikampfquote;
+	private float overallxA;
+	private float overallxANEUN;
+	private float overallxG;
+	private float overallxGNEUN;
+	private String position;
+	private float spieltagbewertung;
 	
 	
-	
-	public Case(String manufacture, String model, String resolution, float price, float weight, float size,
-			String displaytype, String cpu, int ram, float akkukapa, float kameraMegapixel, float frontkameraMegapixel,
-			String memoryslot, float memory, int nfc, float thickness) {
+	public Case(int alter, String name, float overallAbgefangeneBaelle,
+			int overllAssists, float overallBallEroberungen, float overallBallverlust, float overallBewertung,
+			float overallBlockSchuss, float overallDribblings, float overallEinsatzquote, float overallFouls,
+			float overallGeklaerteBaelle, int overallGoals, float overallKPNEUN, float overallkreierteGrosschancen,
+			int overallMinPlayed, float overallPassquote, float overallSchussgenauigkeit, float overallSHNeun,
+			float overallTacklingQuote, float overallTorschussVorlagen, float overallZweikampfquote, float overallxA,
+			float overallxANEUN, float overallxG, float overallxGNEUN, String position, float spieltagbewertung) {
 		super();
-		this.manufacture = manufacture;
-		this.model = model;
-		this.resolution = resolution;
-		this.price = price;
-		this.weight = weight;
-		this.size = size;
-		this.displaytype = displaytype;
-		this.cpu = cpu;
-		this.ram = ram;
-		this.akkukapa = akkukapa;
-		this.kameraMegapixel = kameraMegapixel;
-		this.frontkameraMegapixel = frontkameraMegapixel;
-		this.memoryslot = memoryslot;
-		this.memory = memory;
-		this.nfc = nfc;
-		this.setThickness(thickness);
+		this.alter = alter;
+		this.name = name;
+		this.overallAbgefangeneBaelle = overallAbgefangeneBaelle;
+		this.overallAssists = overllAssists;
+		this.overallBallEroberungen = overallBallEroberungen;
+		this.overallBallverlust = overallBallverlust;
+		this.overallBewertung = overallBewertung;
+		this.overallBlockSchuss = overallBlockSchuss;
+		this.overallDribblings = overallDribblings;
+		this.overallEinsatzquote = overallEinsatzquote;
+		this.overallFouls = overallFouls;
+		this.overallGeklaerteBaelle = overallGeklaerteBaelle;
+		this.overallGoals = overallGoals;
+		this.overallKPNEUN = overallKPNEUN;
+		this.overallkreierteGrosschancen = overallkreierteGrosschancen;
+		this.overallMinPlayed = overallMinPlayed;
+		this.overallPassquote = overallPassquote;
+		this.overallSchussgenauigkeit = overallSchussgenauigkeit;
+		this.overallSHNeun = overallSHNeun;
+		this.overallTacklingQuote = overallTacklingQuote;
+		this.overallTorschussVorlagen = overallTorschussVorlagen;
+		this.overallZweikampfquote = overallZweikampfquote;
+		this.overallxA = overallxA;
+		this.overallxANEUN = overallxANEUN;
+		this.overallxG = overallxG;
+		this.overallxGNEUN = overallxGNEUN;
+		this.position = position;
+		this.spieltagbewertung = spieltagbewertung;
 	}
 	
-	public String getManufacture() {
-		return manufacture;
+	public int getAlter() {
+		return alter;
 	}
-	public void setManufacture(String manufacture) {
-		this.manufacture = manufacture;
+	public void setAlter(int alter) {
+		this.alter = alter;
 	}
-	public String getModel() {
-		return model;
+	public String getName() {
+		return name;
 	}
-	public void setModel(String model) {
-		this.model = model;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getResolution() {
-		return resolution;
+	public float getOverallAbgefangeneBaelle() {
+		return overallAbgefangeneBaelle;
 	}
-	public void setResolution(String resolution) {
-		this.resolution = resolution;
+	public void setOverallAbgefangeneBaelle(float overallAbgefangeneBaelle) {
+		this.overallAbgefangeneBaelle = overallAbgefangeneBaelle;
 	}
-	public float getPrice() {
-		return price;
+	public int getOverallAssists() {
+		return overallAssists;
 	}
-	public void setPrice(float price) {
-		this.price = price;
+	public void setOverllAssists(int overllAssists) {
+		this.overallAssists = overllAssists;
 	}
-	public float getWeight() {
-		return weight;
+	public float getOverallBallEroberungen() {
+		return overallBallEroberungen;
 	}
-	public void setWeight(int weight) {
-		this.weight = weight;
+	public void setOverallBallEroberungen(float overallBallEroberungen) {
+		this.overallBallEroberungen = overallBallEroberungen;
 	}
-	public float getSize() {
-		return size;
+	public float getOverallBallverlust() {
+		return overallBallverlust;
 	}
-	public void setSize(float size) {
-		this.size = size;
+	public void setOverallBallverlust(float overallBallverlust) {
+		this.overallBallverlust = overallBallverlust;
 	}
-	public String getDisplaytype() {
-		return displaytype;
+	public float getOverallBewertung() {
+		return overallBewertung;
 	}
-	public void setDisplaytype(String displaytype) {
-		this.displaytype = displaytype;
+	public void setOverallBewertung(float overallBewertung) {
+		this.overallBewertung = overallBewertung;
 	}
-	public String getCpu() {
-		return cpu;
+	public float getOverallBlockSchuss() {
+		return overallBlockSchuss;
 	}
-	public void setCpu(String cpu) {
-		this.cpu = cpu;
+	public void setOverallBlockSchuss(float overallBlockSchuss) {
+		this.overallBlockSchuss = overallBlockSchuss;
 	}
-	public int getRam() {
-		return ram;
+	public float getOverallDribblings() {
+		return overallDribblings;
 	}
-	public void setRam(int ram) {
-		this.ram = ram;
+	public void setOverallDribblings(float overallDribblings) {
+		this.overallDribblings = overallDribblings;
 	}
-	public float getAkkukapa() {
-		return akkukapa;
+	public float getOverallEinsatzquote() {
+		return overallEinsatzquote;
 	}
-	public void setAkkukapa(float akkukapa) {
-		this.akkukapa = akkukapa;
+	public void setOverallEinsatzquote(float overallEinsatzquote) {
+		this.overallEinsatzquote = overallEinsatzquote;
 	}
-	public float getKameraMegapixel() {
-		return kameraMegapixel;
+	public float getOverallFouls() {
+		return overallFouls;
 	}
-	public void setKameraMegapixel(float kameraMegapixel) {
-		this.kameraMegapixel = kameraMegapixel;
+	public void setOverallFouls(float overallFouls) {
+		this.overallFouls = overallFouls;
 	}
-	public float getFrontkameraMegapixel() {
-		return frontkameraMegapixel;
+	public float getOverallGeklaerteBaelle() {
+		return overallGeklaerteBaelle;
 	}
-	public void setFrontkameraMegapixel(float frontkameraMegapixel) {
-		this.frontkameraMegapixel = frontkameraMegapixel;
+	public void setOverallGeklaerteBaelle(float overallGeklaerteBaelle) {
+		this.overallGeklaerteBaelle = overallGeklaerteBaelle;
 	}
-	public String getMemoryslot() {
-		return memoryslot;
+	public int getOverallGoals() {
+		return overallGoals;
 	}
-	public void setMemoryslot(String memoryslot) {
-		this.memoryslot = memoryslot;
+	public void setOverallGoals(int overallGoals) {
+		this.overallGoals = overallGoals;
 	}
-	public float getMemory() {
-		return memory;
+	public float getOverallKPNEUN() {
+		return overallKPNEUN;
 	}
-	public void setMemory(float memory) {
-		this.memory = memory;
+	public void setOverallKPNEUN(float overallKPNEUN) {
+		this.overallKPNEUN = overallKPNEUN;
 	}
-	public int getNfc() {
-		return nfc;
+	public float getOverallkreierteGrosschancen() {
+		return overallkreierteGrosschancen;
 	}
-	public void setNfc(int nfc) {
-		this.nfc = nfc;
+	public void setOverallkreierteGrosschancen(float overallkreierteGrosschancen) {
+		this.overallkreierteGrosschancen = overallkreierteGrosschancen;
 	}
-
+	public int getOverallMinPlayed() {
+		return overallMinPlayed;
+	}
+	public void setOverallMinPlayed(int overallMinPlayed) {
+		this.overallMinPlayed = overallMinPlayed;
+	}
+	public float getOverallPassquote() {
+		return overallPassquote;
+	}
+	public void setOverallPassquote(float overallPassquote) {
+		this.overallPassquote = overallPassquote;
+	}
+	public float getOverallSchussgenauigkeit() {
+		return overallSchussgenauigkeit;
+	}
+	public void setOverallSchussgenauigkeit(float overallSchussgenauigkeit) {
+		this.overallSchussgenauigkeit = overallSchussgenauigkeit;
+	}
+	public float getOverallSHNeun() {
+		return overallSHNeun;
+	}
+	public void setOverallSHNeun(float overallSHNeun) {
+		this.overallSHNeun = overallSHNeun;
+	}
+	public float getOverallTacklingQuote() {
+		return overallTacklingQuote;
+	}
+	public void setOverallTacklingQuote(float overallTacklingQuote) {
+		this.overallTacklingQuote = overallTacklingQuote;
+	}
+	public float getOverallTorschussVorlagen() {
+		return overallTorschussVorlagen;
+	}
+	public void setOverallTorschussVorlagen(float overallTorschussVorlagen) {
+		this.overallTorschussVorlagen = overallTorschussVorlagen;
+	}
+	public float getOverallZweikampfquote() {
+		return overallZweikampfquote;
+	}
+	public void setOverallZweikampfquote(float overallZweikampfquote) {
+		this.overallZweikampfquote = overallZweikampfquote;
+	}
+	public float getOverallxA() {
+		return overallxA;
+	}
+	public void setOverallxA(float overallxA) {
+		this.overallxA = overallxA;
+	}
+	public float getOverallxANEUN() {
+		return overallxANEUN;
+	}
+	public void setOverallxANEUN(float overallxANEUN) {
+		this.overallxANEUN = overallxANEUN;
+	}
+	public float getOverallxG() {
+		return overallxG;
+	}
+	public void setOverallxG(float overallxG) {
+		this.overallxG = overallxG;
+	}
+	public float getOverallxGNEUN() {
+		return overallxGNEUN;
+	}
+	public void setOverallxGNEUN(float overallxGNEUN) {
+		this.overallxGNEUN = overallxGNEUN;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
+	public float getSpieltagbewertung() {
+		return spieltagbewertung;
+	}
+	public void setSpieltagbewertung(float spieltagbewertung) {
+		this.spieltagbewertung = spieltagbewertung;
+	}
+	
 	@Override
 	public String toString() {
-		return "Case [manufacture=" + manufacture + ", model=" + model + ", resolution=" + resolution + ", price="
-				+ price + ", weight=" + weight + ", size=" + size + ", displaytype=" + displaytype + ", cpu=" + cpu
-				+ ", ram=" + ram + ", akkukapa=" + akkukapa + ", kameraMegapixel=" + kameraMegapixel
-				+ ", frontkameraMegapixel=" + frontkameraMegapixel + ", memoryslot=" + memoryslot + ", memory=" + memory
-				+ ", nfc=" + nfc + ", thickness=" + thickness + "]";
+		return "Case [alter=" + alter +  "name=" + name
+				+ ", overallAbgefangeneBaelle=" + overallAbgefangeneBaelle + ", overllAssists=" + overallAssists
+				+ ", overallBallEroberungen=" + overallBallEroberungen + ", overallBallverlust=" + overallBallverlust
+				+ ", overallBewertung=" + overallBewertung + ", overallBlockSchuss=" + overallBlockSchuss
+				+ ", overallDribblings=" + overallDribblings + ", overallEinsatzquote=" + overallEinsatzquote
+				+ ", overallFouls=" + overallFouls + ", overallGeklaerteBaelle=" + overallGeklaerteBaelle
+				+ ", overallGoals=" + overallGoals + ", overallKPNEUN=" + overallKPNEUN
+				+ ", overallkreierteGrosschancen=" + overallkreierteGrosschancen + ", overallMinPlayed="
+				+ overallMinPlayed + ", overallPassquote=" + overallPassquote + ", overallSchussgenauigkeit="
+				+ overallSchussgenauigkeit + ", overallSHNeun=" + overallSHNeun + ", overallTacklingQuote="
+				+ overallTacklingQuote + ", overallTorschussVorlagen=" + overallTorschussVorlagen
+				+ ", overallZweikampfquote=" + overallZweikampfquote + ", overallxA=" + overallxA + ", overallxANEUN="
+				+ overallxANEUN + ", overallxG=" + overallxG + ", overallxGNEUN=" + overallxGNEUN + ", position="
+				+ position + ", spieltagbewertung=" + spieltagbewertung + "]";
 	}
-
-	public float getThickness() {
-		return thickness;
-	}
-
-	public void setThickness(float thickness) {
-		this.thickness = thickness;
-	}
-	
-
+		
 }

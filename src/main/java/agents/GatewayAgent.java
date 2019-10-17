@@ -1,11 +1,7 @@
 package agents;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.springframework.web.bind.annotation.PathVariable;
-
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -21,17 +17,17 @@ public class GatewayAgent {
 	
 	public GatewayAgent(String task, String url) {
 		switch(task) {
-			case "TEST_AGENT":
-				addMetaData(task, dataStorage);
-				sendMessageToTestAgent();
-				break;
 			case "META_AGENT":
 				addMetaData(task, dataStorage);
 				sendMessageToMetaAgent();	
 				break;
-			case "LEGI_AGENT":
+			case "FILTER_AGENT":
 				addMetaData(task, dataStorage);
-				sendMessageToLegiAgent(url);	
+				sendMessageToFilterAgent(url);	
+				break;
+			case "FONOAPI_AGENT":
+				addMetaData(task, dataStorage);
+				sendMessageToFonoAPI(url);	
 				break;
 			case "CBR_AGENT":
 				addMetaData(task, dataStorage);
@@ -177,15 +173,44 @@ public class GatewayAgent {
 		}
 	}
 	
-	public void sendMessageToLegiAgent(String url) {
+	public void sendMessageToFilterAgent(String url) {
 		try {
 			JadeGateway.execute(new OneShotBehaviour() {
 			    @Override
 			    public void action() {
 			        final ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-			        AID theAgent = new AID("LEGI_AGENT", false);
+			        AID theAgent = new AID("FILTER_AGENT", false);
 			        msg.addReceiver(theAgent);
-			        msg.setConversationId("LEGI_AGENT");
+			        msg.setConversationId("FILTER_AGENT");
+			        msg.setContent(url);
+			        myAgent.send(msg);
+			        ACLMessage res = myAgent.receive();
+			        if (res != null) {
+			            System.out.println(res.getContent());
+			        }
+			    }
+			});
+		} catch (StaleProxyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ControllerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void sendMessageToFonoAPI(String url) {
+		try {
+			JadeGateway.execute(new OneShotBehaviour() {
+			    @Override
+			    public void action() {
+			        final ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+			        AID theAgent = new AID("FONOAPI_AGENT", false);
+			        msg.addReceiver(theAgent);
+			        msg.setConversationId("FONOAPI_AGENT");
 			        msg.setContent(url);
 			        myAgent.send(msg);
 			        ACLMessage res = myAgent.receive();
