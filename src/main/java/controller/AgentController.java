@@ -45,12 +45,12 @@ public class AgentController {
 	    }
 	   
 	   @CrossOrigin(origins="http://localhost:3000")
-	    @RequestMapping(method = RequestMethod.GET, value = "/retrieval")
+	    @RequestMapping(method = RequestMethod.GET, value = "/retrievalPlayer")
 	    public GatewayAgent doRetrievalTask(@RequestParam Map<String, String> customQuery) {
-   		//customQuery.get("manufacture"), customQuery.get("manufacturecheck"), 
-
-	    QueryCase phone = new QueryCase();
-			return new GatewayAgent("RETRIEVAL_AGENT", phone);
+		
+	    QueryCase player = new QueryCase(
+	    	customQuery.get("spielername"));   
+			return new GatewayAgent("RETRIEVAL_AGENT", player);
 	   }
 	   
 	   @CrossOrigin(origins="http://localhost:3000")

@@ -28,7 +28,7 @@ public class FilterTask {
 				FilterInt(player.getOverllAssists()),
 				FilterFloat(player.getOverallBallEroberungen()),
 				FilterFloat(player.getOverallBallverlust()),
-				FilterFloat(player.getOverallBewertung()),
+				FilterBewertungFloat(player.getOverallBewertung()),
 				FilterFloat(player.getOverallBlockSchuss()),
 				FilterProzent(player.getOverallDribblings()),
 				FilterFloat(player.getOverallEinsatzquote()),
@@ -49,7 +49,7 @@ public class FilterTask {
 				FilterFloat(player.getOverallxG()),
 				FilterFloat(player.getOverallxGNEUN()),
 				FilterPosition(player.getPosition()),
-				FilterFloat(player.getOverallBewertung()));
+				FilterBewertungFloat(player.getOverallBewertung()));
 		DataStorage.getSharedDataStorage().getCases().add(c);
 		
 		
@@ -86,6 +86,26 @@ public class FilterTask {
 		}
 		return 0;
 	}
+	
+	private float FilterBewertungFloat(String p) {
+		if(p.contains("-")){
+			return 5;				
+		} else {
+			String numberwithoutprozent = p.replaceAll("%", "");
+			String numberString = numberwithoutprozent.replace(",", ".");
+			float number = Float.parseFloat(numberString);
+			return number;
+			}
+	}
+	
+	//private float FilterFloatBewertung(String p) {
+	//	if(!p.equals("-")){
+	//			String numberString = p.replace(",", ".");
+	//			float number = Float.parseFloat(numberString);
+	//			return number;
+	//		}
+	//	return 5;
+	//}
 	
 	private String FilterPosition(String m) {
 		if(m.contains("Torhüter")) {

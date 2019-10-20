@@ -41,9 +41,7 @@ public class RetrievalTask {
 	try {
 		
 		QueryCase ph = (QueryCase) player;
-		
-		System.out.println(ph.toString());
-		
+				
 		Concept soccerplayer = DataStorage.getSharedDataStorage().getProject().getConceptByID("Soccerplayer");
 
 	    ICaseBase cb = DataStorage.getSharedDataStorage().getCasebasee();
@@ -55,7 +53,6 @@ public class RetrievalTask {
 	    Instance query = retrieve.getQueryInstance();	    
 	  	
 	    IntegerDesc alterDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("Alter");
-	    StringDesc nameDesc = (StringDesc) soccerplayer.getAllAttributeDescs().get("Name");
 	    FloatDesc overallAbgefangeneBaelleDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallAbgefangeneBaelle");
 	    IntegerDesc overallAssistsDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("OverallAssists");
 	    FloatDesc overallBallEroberungenDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallBallEroberungen");
@@ -79,38 +76,73 @@ public class RetrievalTask {
 	    FloatDesc  overallxA90Desc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxA90");
 	    FloatDesc  overallxGDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxG");
 	    FloatDesc  overallxG90Desc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxG90");
+	    FloatDesc  overallTorschussVorlagen = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallxG90");
 	    SymbolDesc positionDesc = (SymbolDesc) soccerplayer.getAllAttributeDescs().get("Position");
-	    FloatDesc  spieltagbewertungDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("SpieltagBewertung");
 	    
-    	query.addAttribute(alterDesc, alterDesc.getAttribute(1));
-    	query.addAttribute(nameDesc, nameDesc.getAttribute("reus"));
-    	query.addAttribute(overallAbgefangeneBaelleDesc, overallAbgefangeneBaelleDesc.getAttribute(1));
-    	query.addAttribute(overallAssistsDesc, overallAssistsDesc.getAttribute(1));
-    	query.addAttribute(overallBallEroberungenDesc, overallBallEroberungenDesc.getAttribute(1));
-    	query.addAttribute(overallBallverlustDesc, overallBallverlustDesc.getAttribute(1));
-    	query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(1));
-    	query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(1));
-    	query.addAttribute(overallDribblingsDesc, overallDribblingsDesc.getAttribute(1));
-    	query.addAttribute(overallEinsatzquoteDesc, overallEinsatzquoteDesc.getAttribute(1));
-    	query.addAttribute(overallFoulsDesc, overallFoulsDesc.getAttribute(1));
-    	query.addAttribute(overallGeklaerteBaelleDesc, overallGeklaerteBaelleDesc.getAttribute(1));
-    	query.addAttribute(overallGoalsDesc, overallGoalsDesc.getAttribute(1));
-    	query.addAttribute(overallKP90Desc, overallKP90Desc.getAttribute(1));
-    	query.addAttribute(overallkreierteGrosschancenDesc, overallkreierteGrosschancenDesc.getAttribute(1));
-    	query.addAttribute(overallMinPlayedDesc, overallMinPlayedDesc.getAttribute(1));
-    	query.addAttribute(overallPassquoteDesc, overallPassquoteDesc.getAttribute(1));
-    	query.addAttribute(overallSchussgenauigkeitDesc, overallSchussgenauigkeitDesc.getAttribute(1));
-    	query.addAttribute(overallSH90Desc, overallSH90Desc.getAttribute(1));
-    	query.addAttribute(overallTacklingquoteDesc, overallTacklingquoteDesc.getAttribute(1));
-    	query.addAttribute(overallZweikampfquoteDesc, overallZweikampfquoteDesc.getAttribute(1));
-    	query.addAttribute(overallxADesc, overallxADesc.getAttribute(1));
-    	query.addAttribute(overallxA90Desc, overallxA90Desc.getAttribute(1));
-    	query.addAttribute(overallxGDesc, overallxGDesc.getAttribute(1));
-    	query.addAttribute(overallxG90Desc, overallxG90Desc.getAttribute(1));
-    	query.addAttribute(positionDesc, positionDesc.getAttribute("RM"));
-    	query.addAttribute(spieltagbewertungDesc, spieltagbewertungDesc.getAttribute(1));
+		System.out.println(ph.getName()+"##############-NAME-##############");
+		
+		if(!(ph.getName().equals("undefined"))){
+			System.out.println(soccerplayer.getInstance(ph.getName())+ "es klappt den spieler zu catchen");
+			System.out.println(soccerplayer.getInstance(ph.getName()).getAttForDesc(alterDesc).getValueAsString() + "es klappt den spieler zu catchen");
+			
+			
+			query.addAttribute(alterDesc, alterDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(alterDesc).getValueAsString())));
+	    	query.addAttribute(overallAbgefangeneBaelleDesc, overallAbgefangeneBaelleDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString())));
+	    	query.addAttribute(overallAssistsDesc, overallAssistsDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAssistsDesc).getValueAsString())));
+	    	query.addAttribute(overallBallEroberungenDesc, overallBallEroberungenDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallEroberungenDesc).getValueAsString())));
+	    	query.addAttribute(overallBallverlustDesc, overallBallverlustDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallverlustDesc).getValueAsString())));
+	    	query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBewertungDesc).getValueAsString())));
+	    	query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBlockSchussDesc).getValueAsString())));
+	    	query.addAttribute(overallDribblingsDesc, overallDribblingsDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallDribblingsDesc).getValueAsString())));
+	    	query.addAttribute(overallEinsatzquoteDesc, overallEinsatzquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallEinsatzquoteDesc).getValueAsString())));
+	    	query.addAttribute(overallFoulsDesc, overallFoulsDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallFoulsDesc).getValueAsString())));
+	    	query.addAttribute(overallGeklaerteBaelleDesc, overallGeklaerteBaelleDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGeklaerteBaelleDesc).getValueAsString())));
+	    	query.addAttribute(overallGoalsDesc, overallGoalsDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGoalsDesc).getValueAsString())));
+	    	query.addAttribute(overallKP90Desc, overallKP90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallKP90Desc).getValueAsString())));
+	    	query.addAttribute(overallkreierteGrosschancenDesc, overallkreierteGrosschancenDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallkreierteGrosschancenDesc).getValueAsString())));
+	    	query.addAttribute(overallMinPlayedDesc, overallMinPlayedDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallMinPlayedDesc).getValueAsString())));
+	    	query.addAttribute(overallPassquoteDesc, overallPassquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallPassquoteDesc).getValueAsString())));
+	    	query.addAttribute(overallSchussgenauigkeitDesc, overallSchussgenauigkeitDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString())));
+	    	query.addAttribute(overallSH90Desc, overallSH90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSH90Desc).getValueAsString())));
+	    	query.addAttribute(overallTacklingquoteDesc, overallTacklingquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTacklingquoteDesc).getValueAsString())));
+	    	query.addAttribute(overallZweikampfquoteDesc, overallZweikampfquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallZweikampfquoteDesc).getValueAsString())));
+	    	query.addAttribute(overallxADesc, overallxADesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxADesc).getValueAsString())));
+	    	query.addAttribute(overallxA90Desc, overallxA90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxA90Desc).getValueAsString())));
+	    	query.addAttribute(overallxGDesc, overallxGDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxGDesc).getValueAsString())));
+	    	query.addAttribute(overallxG90Desc, overallxG90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxG90Desc).getValueAsString())));
+	    	query.addAttribute(overallTorschussVorlagen, overallTorschussVorlagen.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschussVorlagen).getValueAsString())));
+	    	query.addAttribute(positionDesc, positionDesc.getAttribute(soccerplayer.getInstance(ph.getName()).getAttForDesc(positionDesc).getValueAsString()));
 
-
+			System.out.println("bin in der Spieleraustauschsuche");
+	
+		}else {
+			query.addAttribute(alterDesc, alterDesc.getAttribute(1));
+	    	query.addAttribute(overallAbgefangeneBaelleDesc, overallAbgefangeneBaelleDesc.getAttribute(1));
+	    	query.addAttribute(overallAssistsDesc, overallAssistsDesc.getAttribute(1));
+	    	query.addAttribute(overallBallEroberungenDesc, overallBallEroberungenDesc.getAttribute(1));
+	    	query.addAttribute(overallBallverlustDesc, overallBallverlustDesc.getAttribute(1));
+	    	query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(1));
+	    	query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(1));
+	    	query.addAttribute(overallDribblingsDesc, overallDribblingsDesc.getAttribute(1));
+	    	query.addAttribute(overallEinsatzquoteDesc, overallEinsatzquoteDesc.getAttribute(1));
+	    	query.addAttribute(overallFoulsDesc, overallFoulsDesc.getAttribute(1));
+	    	query.addAttribute(overallGeklaerteBaelleDesc, overallGeklaerteBaelleDesc.getAttribute(1));
+	    	query.addAttribute(overallGoalsDesc, overallGoalsDesc.getAttribute(1));
+	    	query.addAttribute(overallKP90Desc, overallKP90Desc.getAttribute(1));
+	    	query.addAttribute(overallkreierteGrosschancenDesc, overallkreierteGrosschancenDesc.getAttribute(1));
+	    	query.addAttribute(overallMinPlayedDesc, overallMinPlayedDesc.getAttribute(1));
+	    	query.addAttribute(overallPassquoteDesc, overallPassquoteDesc.getAttribute(1));
+	    	query.addAttribute(overallSchussgenauigkeitDesc, overallSchussgenauigkeitDesc.getAttribute(1));
+	    	query.addAttribute(overallSH90Desc, overallSH90Desc.getAttribute(1));
+	    	query.addAttribute(overallTacklingquoteDesc, overallTacklingquoteDesc.getAttribute(1));
+	    	query.addAttribute(overallZweikampfquoteDesc, overallZweikampfquoteDesc.getAttribute(1));
+	    	query.addAttribute(overallxADesc, overallxADesc.getAttribute(1));
+	    	query.addAttribute(overallxA90Desc, overallxA90Desc.getAttribute(1));
+	    	query.addAttribute(overallxGDesc, overallxGDesc.getAttribute(1));
+	    	query.addAttribute(overallxG90Desc, overallxG90Desc.getAttribute(1));
+	    	query.addAttribute(overallTorschussVorlagen, overallTorschussVorlagen.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschussVorlagen).getValueAsString())));
+	    	query.addAttribute(positionDesc, positionDesc.getAttribute("RM"));
+		}
     	
   
 	    
@@ -125,14 +157,12 @@ public class RetrievalTask {
 	    
 	    List <Pair<Instance, Similarity>> result = retrieve.getResult();
 
-
-	    for (int i = 0; i < 5; i++) {
+	    for (int i = 0; i < 10; i++) {
 		    System.out.println("##########################"+i+"######################");
 	    	Instance obj = soccerplayer.getInstance(result.get(i).getFirst().getName());
 	    	System.out.println(obj);
 	    	System.out.println(retrieve.getResult().get(i).getSecond().getValue() + " - Ähnlichkeit");
 	    	System.out.println(obj.getAttForDesc(alterDesc).getValueAsString() + " - Alter");
-	    	System.out.println(obj.getAttForDesc(nameDesc).getValueAsString() + " - Namw");
 	    	System.out.println(obj.getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString() + " - overallAbgefangeneBaelleDesc");
 	    	System.out.println(obj.getAttForDesc(overallAssistsDesc).getValueAsString() + " - overllAssistsDesc");
 	    	System.out.println(obj.getAttForDesc(overallBallEroberungenDesc).getValueAsString() + " - overallBallEroberungen");
@@ -150,23 +180,48 @@ public class RetrievalTask {
 	    	System.out.println(obj.getAttForDesc(overallPassquoteDesc).getValueAsString() + " - overallPassquote");	    	
 	    	System.out.println(obj.getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString() + " - overallSchussgenauigkeit");	    	
 	    	System.out.println(obj.getAttForDesc(overallSH90Desc).getValueAsString() + " - overallSH90");	    	
-	    	System.out.println(obj.getAttForDesc(overallTacklingquoteDesc).getValueAsString() + " - overallTacklingquote");	    	
+	    	System.out.println(obj.getAttForDesc(overallTacklingquoteDesc).getValueAsString() + " - overallTacklingquote");	
+	    	System.out.println(obj.getAttForDesc(overallTorschussVorlagen).getValueAsString() + " - overallTorschussvorlagen");	    	
 	    	System.out.println(obj.getAttForDesc(overallZweikampfquoteDesc).getValueAsString() + " - overallZweikampfquote");	    	
 	    	System.out.println(obj.getAttForDesc(overallxADesc).getValueAsString() + " - overallxA");	    	
 	    	System.out.println(obj.getAttForDesc(overallxA90Desc).getValueAsString() + " - overallxA90");	    	
 	    	System.out.println(obj.getAttForDesc(overallxGDesc).getValueAsString() + " - overallxG");
 	    	System.out.println(obj.getAttForDesc(overallxG90Desc).getValueAsString() + " - overallxG90");
 	    	System.out.println(obj.getAttForDesc(positionDesc).getValueAsString() + " - position");
-	    	System.out.println(obj.getAttForDesc(spieltagbewertungDesc).getValueAsString() + " - spieltagbewertung");
 		    System.out.println("################################################");
 		    
-		  //  RetrievalCase phoned = new RetrievalCase(
-		    //		Double.toString(retrieve.getResult().get(i).getSecond().getValue()),
-		    //		obj.getAttForDesc(manufactureDesc).getValueAsString(),
-		
-		//    		);		
+		    RetrievalCase soccerplayerretrieval = new RetrievalCase(
+		    		obj.getValueAsString(),
+		    		Double.toString(retrieve.getResult().get(i).getSecond().getValue()),
+		    		obj.getAttForDesc(alterDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallAssistsDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallBallEroberungenDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallBallverlustDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallBewertungDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallBlockSchussDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallDribblingsDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallEinsatzquoteDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallFoulsDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallGeklaerteBaelleDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallGoalsDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallKP90Desc).getValueAsString(),
+			    	obj.getAttForDesc(overallkreierteGrosschancenDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallMinPlayedDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallPassquoteDesc).getValueAsString(),	
+			    	obj.getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString(),    	
+			    	obj.getAttForDesc(overallSH90Desc).getValueAsString(),    	
+			    	obj.getAttForDesc(overallTacklingquoteDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallTorschussVorlagen).getValueAsString(),   	
+			    	obj.getAttForDesc(overallZweikampfquoteDesc).getValueAsString(),    	
+			    	obj.getAttForDesc(overallxADesc).getValueAsString(),    	
+			    	obj.getAttForDesc(overallxA90Desc).getValueAsString(),    	
+			    	obj.getAttForDesc(overallxGDesc).getValueAsString(),
+			    	obj.getAttForDesc(overallxG90Desc).getValueAsString(),
+			    	obj.getAttForDesc(positionDesc).getValueAsString()
+		    		);		
 		    
-		  //  dataStorage.getSharedDataStorage().getRetrievalphoneList().add(phoned);
+		 dataStorage.getSharedDataStorage().getRetrievalsoccerplayerList().add(soccerplayerretrieval);
 		    
 	    }
 	    

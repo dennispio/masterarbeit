@@ -47,9 +47,8 @@ public class CbrTask {
     	int count = 0;
 		for(Case c: playerarray) {
 			try {
-				Instance i = soccerplayer.addInstance(soccerplayer.getName() + " #" + (cb.getCases().size()+1));
+				Instance i = soccerplayer.addInstance(c.getName());
 				i.addAttribute("Alter", c.getAlter());
-				i.addAttribute("Name", c.getName());
 				i.addAttribute("OverallAbgefangeneBaelle", c.getOverallAbgefangeneBaelle());
 				i.addAttribute("OverallAssists", c.getOverallAssists());
 				i.addAttribute("OverallBallEroberungen", c.getOverallBallEroberungen());
@@ -75,7 +74,6 @@ public class CbrTask {
 				i.addAttribute("OverallxG", c.getOverallxG());
 				i.addAttribute("OverallxG90", c.getOverallxGNEUN());
 				i.addAttribute("Position", c.getPosition());
-				i.addAttribute("SpieltagBewertung", c.getSpieltagbewertung());
 		
 				cb.addCase(i);
 				count++;
