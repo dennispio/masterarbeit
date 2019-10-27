@@ -5,15 +5,7 @@ import java.io.Serializable;
 public class QueryCase implements Serializable {
 	
 	private String alter;
-	private String lastAssists;
-	private String lastGoals;
-	private String lastKPNEUN;
-	private String lastMinPlayed;
-	private String lastSh90;
-	private String lastxA;
-	private String lastxANEUN;
-	private String lastxG;
-	private String lastxGNEUN;
+	private String anzahl;
 	private String name;
 	private String overallAbgefangeneBaelle;
 	private String overllAssists;
@@ -41,32 +33,32 @@ public class QueryCase implements Serializable {
 	private String overallxGNEUN;
 	private String position;
 	private String spieltagbewertung;
+	private String overallTorschuesse;
+	private String overallLuftzweikampf;
+	private String transfermarktwert;
+	private String spielertyp;
+
 	
-	public QueryCase(String name) {
+	public QueryCase(String name, String anzahl, String spielertyp) {
 		super();
 		this.name = name;
+		this.anzahl=anzahl;
+		this.spielertyp = spielertyp;
 	}
 
-	public QueryCase(String alter, String lastAssists, String lastGoals, String lastKPNEUN, String lastMinPlayed,
-			String lastSh90, String lastxA, String lastxANEUN, String lastxG, String lastxGNEUN, String name,
-			String overallAbgefangeneBaelle, String overllAssists, String overallBallEroberungen,
-			String overallBallverlust, String overallBewertung, String overallBlockSchuss, String overallDribblings,
-			String overallEinsatzquote, String overallFouls, String overallGeklaerteBaelle, String overallGoals,
-			String overallKPNEUN, String overallkreierteGrosschancen, String overallMinPlayed, String overallPassquote,
+
+	public QueryCase(String alter, String anzahl, String name, String overallAbgefangeneBaelle, String overllAssists,
+			String overallBallEroberungen, String overallBallverlust, String overallBewertung,
+			String overallBlockSchuss, String overallDribblings, String overallEinsatzquote, String overallFouls,
+			String overallGeklaerteBaelle, String overallGoals, String overallKPNEUN,
+			String overallkreierteGrosschancen, String overallPassquote,
 			String overallSchussgenauigkeit, String overallSHNeun, String overallTacklingQuote,
 			String overallTorschussVorlagen, String overallZweikampfquote, String overallxA, String overallxANEUN,
-			String overallxG, String overallxGNEUN, String position, String spieltagbewertung) {
+			String overallxG, String overallxGNEUN, String position, String spieltagbewertung,
+			String overallTorschuesse, String overallLuftzweikampf, String transfermarktwert, String spielertyp) {
 		super();
 		this.alter = alter;
-		this.lastAssists = lastAssists;
-		this.lastGoals = lastGoals;
-		this.lastKPNEUN = lastKPNEUN;
-		this.lastMinPlayed = lastMinPlayed;
-		this.lastSh90 = lastSh90;
-		this.lastxA = lastxA;
-		this.lastxANEUN = lastxANEUN;
-		this.lastxG = lastxG;
-		this.lastxGNEUN = lastxGNEUN;
+		this.anzahl = anzahl;
 		this.name = name;
 		this.overallAbgefangeneBaelle = overallAbgefangeneBaelle;
 		this.overllAssists = overllAssists;
@@ -81,7 +73,6 @@ public class QueryCase implements Serializable {
 		this.overallGoals = overallGoals;
 		this.overallKPNEUN = overallKPNEUN;
 		this.overallkreierteGrosschancen = overallkreierteGrosschancen;
-		this.overallMinPlayed = overallMinPlayed;
 		this.overallPassquote = overallPassquote;
 		this.overallSchussgenauigkeit = overallSchussgenauigkeit;
 		this.overallSHNeun = overallSHNeun;
@@ -94,304 +85,342 @@ public class QueryCase implements Serializable {
 		this.overallxGNEUN = overallxGNEUN;
 		this.position = position;
 		this.spieltagbewertung = spieltagbewertung;
+		this.overallTorschuesse = overallTorschuesse;
+		this.overallLuftzweikampf = overallLuftzweikampf;
+		this.transfermarktwert = transfermarktwert;
+		this.spielertyp = spielertyp;
 	}
+
 
 	public String getAlter() {
 		return alter;
 	}
 
+
 	public void setAlter(String alter) {
 		this.alter = alter;
 	}
 
-	public String getLastAssists() {
-		return lastAssists;
+
+	public String getAnzahl() {
+		return anzahl;
 	}
 
-	public void setLastAssists(String lastAssists) {
-		this.lastAssists = lastAssists;
+
+	public void setAnzahl(String anzahl) {
+		this.anzahl = anzahl;
 	}
 
-	public String getLastGoals() {
-		return lastGoals;
-	}
-
-	public void setLastGoals(String lastGoals) {
-		this.lastGoals = lastGoals;
-	}
-
-	public String getLastKPNEUN() {
-		return lastKPNEUN;
-	}
-
-	public void setLastKPNEUN(String lastKPNEUN) {
-		this.lastKPNEUN = lastKPNEUN;
-	}
-
-	public String getLastMinPlayed() {
-		return lastMinPlayed;
-	}
-
-	public void setLastMinPlayed(String lastMinPlayed) {
-		this.lastMinPlayed = lastMinPlayed;
-	}
-
-	public String getLastSh90() {
-		return lastSh90;
-	}
-
-	public void setLastSh90(String lastSh90) {
-		this.lastSh90 = lastSh90;
-	}
-
-	public String getLastxA() {
-		return lastxA;
-	}
-
-	public void setLastxA(String lastxA) {
-		this.lastxA = lastxA;
-	}
-
-	public String getLastxANEUN() {
-		return lastxANEUN;
-	}
-
-	public void setLastxANEUN(String lastxANEUN) {
-		this.lastxANEUN = lastxANEUN;
-	}
-
-	public String getLastxG() {
-		return lastxG;
-	}
-
-	public void setLastxG(String lastxG) {
-		this.lastxG = lastxG;
-	}
-
-	public String getLastxGNEUN() {
-		return lastxGNEUN;
-	}
-
-	public void setLastxGNEUN(String lastxGNEUN) {
-		this.lastxGNEUN = lastxGNEUN;
-	}
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public String getOverallAbgefangeneBaelle() {
 		return overallAbgefangeneBaelle;
 	}
 
+
 	public void setOverallAbgefangeneBaelle(String overallAbgefangeneBaelle) {
 		this.overallAbgefangeneBaelle = overallAbgefangeneBaelle;
 	}
+
 
 	public String getOverllAssists() {
 		return overllAssists;
 	}
 
+
 	public void setOverllAssists(String overllAssists) {
 		this.overllAssists = overllAssists;
 	}
+
 
 	public String getOverallBallEroberungen() {
 		return overallBallEroberungen;
 	}
 
+
 	public void setOverallBallEroberungen(String overallBallEroberungen) {
 		this.overallBallEroberungen = overallBallEroberungen;
 	}
+
 
 	public String getOverallBallverlust() {
 		return overallBallverlust;
 	}
 
+
 	public void setOverallBallverlust(String overallBallverlust) {
 		this.overallBallverlust = overallBallverlust;
 	}
+
 
 	public String getOverallBewertung() {
 		return overallBewertung;
 	}
 
+
 	public void setOverallBewertung(String overallBewertung) {
 		this.overallBewertung = overallBewertung;
 	}
+
 
 	public String getOverallBlockSchuss() {
 		return overallBlockSchuss;
 	}
 
+
 	public void setOverallBlockSchuss(String overallBlockSchuss) {
 		this.overallBlockSchuss = overallBlockSchuss;
 	}
+
 
 	public String getOverallDribblings() {
 		return overallDribblings;
 	}
 
+
 	public void setOverallDribblings(String overallDribblings) {
 		this.overallDribblings = overallDribblings;
 	}
+
 
 	public String getOverallEinsatzquote() {
 		return overallEinsatzquote;
 	}
 
+
 	public void setOverallEinsatzquote(String overallEinsatzquote) {
 		this.overallEinsatzquote = overallEinsatzquote;
 	}
+
 
 	public String getOverallFouls() {
 		return overallFouls;
 	}
 
+
 	public void setOverallFouls(String overallFouls) {
 		this.overallFouls = overallFouls;
 	}
+
 
 	public String getOverallGeklaerteBaelle() {
 		return overallGeklaerteBaelle;
 	}
 
+
 	public void setOverallGeklaerteBaelle(String overallGeklaerteBaelle) {
 		this.overallGeklaerteBaelle = overallGeklaerteBaelle;
 	}
+
 
 	public String getOverallGoals() {
 		return overallGoals;
 	}
 
+
 	public void setOverallGoals(String overallGoals) {
 		this.overallGoals = overallGoals;
 	}
+
 
 	public String getOverallKPNEUN() {
 		return overallKPNEUN;
 	}
 
+
 	public void setOverallKPNEUN(String overallKPNEUN) {
 		this.overallKPNEUN = overallKPNEUN;
 	}
+
 
 	public String getOverallkreierteGrosschancen() {
 		return overallkreierteGrosschancen;
 	}
 
+
 	public void setOverallkreierteGrosschancen(String overallkreierteGrosschancen) {
 		this.overallkreierteGrosschancen = overallkreierteGrosschancen;
 	}
+
 
 	public String getOverallMinPlayed() {
 		return overallMinPlayed;
 	}
 
+
 	public void setOverallMinPlayed(String overallMinPlayed) {
 		this.overallMinPlayed = overallMinPlayed;
 	}
+
 
 	public String getOverallPassquote() {
 		return overallPassquote;
 	}
 
+
 	public void setOverallPassquote(String overallPassquote) {
 		this.overallPassquote = overallPassquote;
 	}
+
 
 	public String getOverallSchussgenauigkeit() {
 		return overallSchussgenauigkeit;
 	}
 
+
 	public void setOverallSchussgenauigkeit(String overallSchussgenauigkeit) {
 		this.overallSchussgenauigkeit = overallSchussgenauigkeit;
 	}
+
 
 	public String getOverallSHNeun() {
 		return overallSHNeun;
 	}
 
+
 	public void setOverallSHNeun(String overallSHNeun) {
 		this.overallSHNeun = overallSHNeun;
 	}
+
 
 	public String getOverallTacklingQuote() {
 		return overallTacklingQuote;
 	}
 
+
 	public void setOverallTacklingQuote(String overallTacklingQuote) {
 		this.overallTacklingQuote = overallTacklingQuote;
 	}
+
 
 	public String getOverallTorschussVorlagen() {
 		return overallTorschussVorlagen;
 	}
 
+
 	public void setOverallTorschussVorlagen(String overallTorschussVorlagen) {
 		this.overallTorschussVorlagen = overallTorschussVorlagen;
 	}
+
 
 	public String getOverallZweikampfquote() {
 		return overallZweikampfquote;
 	}
 
+
 	public void setOverallZweikampfquote(String overallZweikampfquote) {
 		this.overallZweikampfquote = overallZweikampfquote;
 	}
+
 
 	public String getOverallxA() {
 		return overallxA;
 	}
 
+
 	public void setOverallxA(String overallxA) {
 		this.overallxA = overallxA;
 	}
+
 
 	public String getOverallxANEUN() {
 		return overallxANEUN;
 	}
 
+
 	public void setOverallxANEUN(String overallxANEUN) {
 		this.overallxANEUN = overallxANEUN;
 	}
+
 
 	public String getOverallxG() {
 		return overallxG;
 	}
 
+
 	public void setOverallxG(String overallxG) {
 		this.overallxG = overallxG;
 	}
+
 
 	public String getOverallxGNEUN() {
 		return overallxGNEUN;
 	}
 
+
 	public void setOverallxGNEUN(String overallxGNEUN) {
 		this.overallxGNEUN = overallxGNEUN;
 	}
+
 
 	public String getPosition() {
 		return position;
 	}
 
+
 	public void setPosition(String position) {
 		this.position = position;
 	}
+
 
 	public String getSpieltagbewertung() {
 		return spieltagbewertung;
 	}
 
+
 	public void setSpieltagbewertung(String spieltagbewertung) {
 		this.spieltagbewertung = spieltagbewertung;
 	}
+
+
+	public String getOverallTorschuesse() {
+		return overallTorschuesse;
+	}
+
+
+	public void setOverallTorschuesse(String overallTorschuesse) {
+		this.overallTorschuesse = overallTorschuesse;
+	}
+
+
+	public String getOverallLuftzweikampf() {
+		return overallLuftzweikampf;
+	}
+
+
+	public void setOverallLuftzweikampf(String overallLuftzweikampf) {
+		this.overallLuftzweikampf = overallLuftzweikampf;
+	}
+
+
+	public String getTransfermarktwert() {
+		return transfermarktwert;
+	}
+
+
+	public void setTransfermarktwert(String transfermarktwert) {
+		this.transfermarktwert = transfermarktwert;
+	}
+
+
+	public String getSpielertyp() {
+		return spielertyp;
+	}
+
+
+	public void setSpielertyp(String spielertyp) {
+		this.spielertyp = spielertyp;
+	}
+
+
 	
-	
-		
 }

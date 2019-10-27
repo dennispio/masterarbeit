@@ -3,15 +3,6 @@ package objects;
 public class Case {
 	
 	private int alter;
-	//private int lastAssists;
-	//private int lastGoals;
-	//private float lastKPNEUN;
-	//private int lastMinPlayed;
-	//private float lastSh90;
-	//private float lastxA;
-//	private float lastxANEUN;
-//	private float lastxG;
-//	private float lastxGNEUN;
 	private String name;
 	private float overallAbgefangeneBaelle;
 	private int overallAssists;
@@ -38,21 +29,22 @@ public class Case {
 	private float overallxG;
 	private float overallxGNEUN;
 	private String position;
-	private float spieltagbewertung;
-	
-	
-	public Case(int alter, String name, float overallAbgefangeneBaelle,
-			int overllAssists, float overallBallEroberungen, float overallBallverlust, float overallBewertung,
-			float overallBlockSchuss, float overallDribblings, float overallEinsatzquote, float overallFouls,
-			float overallGeklaerteBaelle, int overallGoals, float overallKPNEUN, float overallkreierteGrosschancen,
-			int overallMinPlayed, float overallPassquote, float overallSchussgenauigkeit, float overallSHNeun,
-			float overallTacklingQuote, float overallTorschussVorlagen, float overallZweikampfquote, float overallxA,
-			float overallxANEUN, float overallxG, float overallxGNEUN, String position, float spieltagbewertung) {
+	private float overallTorschuesse;
+	private float overallLuftzweikampf;
+	private float transfermarktwert;
+	public Case(int alter, String name, float overallAbgefangeneBaelle, int overallAssists,
+			float overallBallEroberungen, float overallBallverlust, float overallBewertung, float overallBlockSchuss,
+			float overallDribblings, float overallEinsatzquote, float overallFouls, float overallGeklaerteBaelle,
+			int overallGoals, float overallKPNEUN, float overallkreierteGrosschancen, int overallMinPlayed,
+			float overallPassquote, float overallSchussgenauigkeit, float overallSHNeun, float overallTacklingQuote,
+			float overallTorschussVorlagen, float overallZweikampfquote, float overallxA, float overallxANEUN,
+			float overallxG, float overallxGNEUN, String position, float overallTorschuesse, float overallLuftzweikampf,
+			float transfermarktwert) {
 		super();
 		this.alter = alter;
 		this.name = name;
 		this.overallAbgefangeneBaelle = overallAbgefangeneBaelle;
-		this.overallAssists = overllAssists;
+		this.overallAssists = overallAssists;
 		this.overallBallEroberungen = overallBallEroberungen;
 		this.overallBallverlust = overallBallverlust;
 		this.overallBewertung = overallBewertung;
@@ -76,9 +68,10 @@ public class Case {
 		this.overallxG = overallxG;
 		this.overallxGNEUN = overallxGNEUN;
 		this.position = position;
-		this.spieltagbewertung = spieltagbewertung;
+		this.overallTorschuesse = overallTorschuesse;
+		this.overallLuftzweikampf = overallLuftzweikampf;
+		this.transfermarktwert = transfermarktwert;
 	}
-	
 	public int getAlter() {
 		return alter;
 	}
@@ -100,8 +93,8 @@ public class Case {
 	public int getOverallAssists() {
 		return overallAssists;
 	}
-	public void setOverllAssists(int overllAssists) {
-		this.overallAssists = overllAssists;
+	public void setOverallAssists(int overallAssists) {
+		this.overallAssists = overallAssists;
 	}
 	public float getOverallBallEroberungen() {
 		return overallBallEroberungen;
@@ -241,29 +234,41 @@ public class Case {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-	public float getSpieltagbewertung() {
-		return spieltagbewertung;
+	public float getOverallTorschuesse() {
+		return overallTorschuesse;
 	}
-	public void setSpieltagbewertung(float spieltagbewertung) {
-		this.spieltagbewertung = spieltagbewertung;
+	public void setOverallTorschuesse(float overallTorschuesse) {
+		this.overallTorschuesse = overallTorschuesse;
 	}
-	
+	public float getOverallLuftzweikampf() {
+		return overallLuftzweikampf;
+	}
+	public void setOverallLuftzweikampf(float overallLuftzweikampf) {
+		this.overallLuftzweikampf = overallLuftzweikampf;
+	}
+	public float getTransfermarktwert() {
+		return transfermarktwert;
+	}
+	public void setTransfermarktwert(float transfermarktwert) {
+		this.transfermarktwert = transfermarktwert;
+	}
 	@Override
 	public String toString() {
-		return "Case [alter=" + alter +  "name=" + name
-				+ ", overallAbgefangeneBaelle=" + overallAbgefangeneBaelle + ", overllAssists=" + overallAssists
-				+ ", overallBallEroberungen=" + overallBallEroberungen + ", overallBallverlust=" + overallBallverlust
-				+ ", overallBewertung=" + overallBewertung + ", overallBlockSchuss=" + overallBlockSchuss
-				+ ", overallDribblings=" + overallDribblings + ", overallEinsatzquote=" + overallEinsatzquote
-				+ ", overallFouls=" + overallFouls + ", overallGeklaerteBaelle=" + overallGeklaerteBaelle
-				+ ", overallGoals=" + overallGoals + ", overallKPNEUN=" + overallKPNEUN
-				+ ", overallkreierteGrosschancen=" + overallkreierteGrosschancen + ", overallMinPlayed="
-				+ overallMinPlayed + ", overallPassquote=" + overallPassquote + ", overallSchussgenauigkeit="
-				+ overallSchussgenauigkeit + ", overallSHNeun=" + overallSHNeun + ", overallTacklingQuote="
-				+ overallTacklingQuote + ", overallTorschussVorlagen=" + overallTorschussVorlagen
-				+ ", overallZweikampfquote=" + overallZweikampfquote + ", overallxA=" + overallxA + ", overallxANEUN="
-				+ overallxANEUN + ", overallxG=" + overallxG + ", overallxGNEUN=" + overallxGNEUN + ", position="
-				+ position + ", spieltagbewertung=" + spieltagbewertung + "]";
+		return "Case [alter=" + alter + ", name=" + name + ", overallAbgefangeneBaelle=" + overallAbgefangeneBaelle
+				+ ", overallAssists=" + overallAssists + ", overallBallEroberungen=" + overallBallEroberungen
+				+ ", overallBallverlust=" + overallBallverlust + ", overallBewertung=" + overallBewertung
+				+ ", overallBlockSchuss=" + overallBlockSchuss + ", overallDribblings=" + overallDribblings
+				+ ", overallEinsatzquote=" + overallEinsatzquote + ", overallFouls=" + overallFouls
+				+ ", overallGeklaerteBaelle=" + overallGeklaerteBaelle + ", overallGoals=" + overallGoals
+				+ ", overallKPNEUN=" + overallKPNEUN + ", overallkreierteGrosschancen=" + overallkreierteGrosschancen
+				+ ", overallMinPlayed=" + overallMinPlayed + ", overallPassquote=" + overallPassquote
+				+ ", overallSchussgenauigkeit=" + overallSchussgenauigkeit + ", overallSHNeun=" + overallSHNeun
+				+ ", overallTacklingQuote=" + overallTacklingQuote + ", overallTorschussVorlagen="
+				+ overallTorschussVorlagen + ", overallZweikampfquote=" + overallZweikampfquote + ", overallxA="
+				+ overallxA + ", overallxANEUN=" + overallxANEUN + ", overallxG=" + overallxG + ", overallxGNEUN="
+				+ overallxGNEUN + ", position=" + position + ", overallTorschuesse=" + overallTorschuesse
+				+ ", overallLuftzweikampf=" + overallLuftzweikampf + ", transfermarktwert=" + transfermarktwert + "]";
 	}
-		
+	
+	
 }

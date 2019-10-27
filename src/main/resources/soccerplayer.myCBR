@@ -16,46 +16,57 @@
 <model>
   <concept name="Soccerplayer">
     <desc name="OverallKreierteGrosschancen" type="Float" min="0.0" max="3.0" mult="false" >
-      <fct name="grosschance" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="kregr" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-3.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="3.0" y="0.0" />
       </fct>
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
-    <desc name="OverallPassquote" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="passquote" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+    <desc name="OverallLuftzweikampf" type="Float" min="0.0" max="100.0" mult="false" >
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="luftzwei" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-100.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="100.0" y="0.0" />
+      </fct>
+    </desc>
+    <desc name="OverallPassquote" type="Float" min="0.0" max="100.0" mult="false" >
+      <fct name="passquotee" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="0.0" y="1.0" />
       </fct>
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallTorschussVorlagen" type="Float" min="0.0" max="8.0" mult="false" >
-      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="torschussvorlagen" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="toschussvor" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-8.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="8.0" y="0.0" />
       </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallSchussgenauigkeit" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="schussgenauigkeit" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="schussgenau" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-100.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="100.0" y="0.0" />
       </fct>
-      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-    </desc>
-    <desc name="Name" type="String" mult="false" >
-      <fct name="default function" type="String" symm="true" config="EQUALITY" n="3" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
     </desc>
     <desc name="OverallMinPlayed" type="Integer" min="0" max="40000" mult="false" >
-      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
-      <fct name="minplayed" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+      <fct name="min" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
         <point x="-40000.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="40000.0" y="0.0" />
+      </fct>
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="transfermarktwert" type="Float" min="0.0" max="250.0" mult="false" >
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="trans" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="-250.0" y="0.0" />
+        <point x="0.0" y="1.0" />
+        <point x="250.0" y="0.0" />
       </fct>
     </desc>
     <desc name="OverallZweikampfquote" type="Float" min="0.0" max="100.0" mult="false" >
@@ -67,7 +78,7 @@
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallAbgefangeneBaelle" type="Float" min="0.0" max="5.0" mult="false" >
-      <fct name="abgefangenebaelle" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="abg" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-5.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="5.0" y="0.0" />
@@ -99,15 +110,15 @@
       </fct>
     </desc>
     <desc name="OverallGoals" type="Integer" min="0" max="40" mult="false" >
-      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
-      <fct name="goals" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+      <fct name="goal" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
         <point x="-40.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="40.0" y="0.0" />
       </fct>
+      <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
     </desc>
     <desc name="OverallFouls" type="Float" min="0.0" max="4.0" mult="false" >
-      <fct name="fouls" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="foulss" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-4.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="4.0" y="0.0" />
@@ -115,12 +126,12 @@
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallGeklaerteBaelle" type="Float" min="0.0" max="10.0" mult="false" >
-      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="geklaertebaelle" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="gebae" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-10.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="10.0" y="0.0" />
       </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="Position" type="Symbol" mult="false" >
       <symbol value="ST" />
@@ -255,7 +266,7 @@
       </fct>
     </desc>
     <desc name="OverallxA90" type="Float" min="0.0" max="4.0" mult="false" >
-      <fct name="xa90" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="xa9" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-4.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="4.0" y="0.0" />
@@ -279,12 +290,12 @@
       </fct>
     </desc>
     <desc name="OverallSh90" type="Float" min="0.0" max="10.0" mult="false" >
-      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="sh90" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="sh" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-10.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="10.0" y="0.0" />
       </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallEinsatzquote" type="Float" min="0.0" max="100.0" mult="false" >
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
@@ -296,7 +307,7 @@
     </desc>
     <desc name="OverallBallverlust" type="Float" min="0.0" max="10.0" mult="false" >
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="ballverlust" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="ballver" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-10.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="10.0" y="0.0" />
@@ -304,7 +315,7 @@
     </desc>
     <desc name="Alter" type="Integer" min="0" max="40" mult="false" >
       <fct name="default function" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
-      <fct name="alter" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
+      <fct name="alt" type="AdvancedInteger" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX">
         <point x="-40.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="40.0" y="0.0" />
@@ -320,56 +331,66 @@
     </desc>
     <desc name="OverallxG90" type="Float" min="0.0" max="5.0" mult="false" >
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="xg90" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="xg9" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-5.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="5.0" y="0.0" />
       </fct>
     </desc>
     <desc name="OverallKP90" type="Float" min="0.0" max="10.0" mult="false" >
-      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="kp90" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="kp" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-10.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="10.0" y="0.0" />
       </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallTacklingquote" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="tacklingquote" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+      <fct name="tackling" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
         <point x="-100.0" y="0.0" />
         <point x="0.0" y="1.0" />
         <point x="100.0" y="0.0" />
       </fct>
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="OverallTorschuesse" type="Float" min="0.0" max="3.0" mult="false" >
+      <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="torschuss" type="AdvancedFloat" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
+        <point x="-3.0" y="0.0" />
+        <point x="0.0" y="1.0" />
+        <point x="3.0" y="0.0" />
+      </fct>
     </desc>
     <amalgam name="default function" type="EUCLIDEAN" active="true" >
-      <entry name="OverallKreierteGrosschancen" active="true" fct="grosschance" weight="1.0"/>
+      <entry name="OverallKreierteGrosschancen" active="true" fct="kregr" weight="1.0"/>
+      <entry name="OverallLuftzweikampf" active="true" fct="luftzwei" weight="1.0"/>
       <entry name="OverallPassquote" active="true" fct="passquote" weight="1.0"/>
-      <entry name="OverallTorschussVorlagen" active="true" fct="torschussvorlagen" weight="1.0"/>
-      <entry name="OverallSchussgenauigkeit" active="true" fct="default function" weight="1.0"/>
-      <entry name="Name" active="true" fct="default function" weight="1.0"/>
-      <entry name="OverallMinPlayed" active="true" fct="minplayed" weight="1.0"/>
+      <entry name="OverallTorschussVorlagen" active="true" fct="toschussvor" weight="1.0"/>
+      <entry name="OverallSchussgenauigkeit" active="true" fct="schussgenau" weight="1.0"/>
+      <entry name="OverallMinPlayed" active="true" fct="min" weight="1.0"/>
+      <entry name="transfermarktwert" active="true" fct="default function" weight="1.0"/>
       <entry name="OverallZweikampfquote" active="true" fct="zweikampf" weight="1.0"/>
-      <entry name="OverallAbgefangeneBaelle" active="true" fct="abgefangenebaelle" weight="1.0"/>
+      <entry name="OverallAbgefangeneBaelle" active="true" fct="abg" weight="1.0"/>
       <entry name="OverallAssists" active="true" fct="assists" weight="1.0"/>
       <entry name="OverallBewertung" active="true" fct="bewertung" weight="1.0"/>
       <entry name="OverallBallEroberungen" active="true" fct="balleroberungen" weight="1.0"/>
-      <entry name="OverallGoals" active="true" fct="goals" weight="1.0"/>
-      <entry name="OverallFouls" active="true" fct="fouls" weight="1.0"/>
-      <entry name="OverallGeklaerteBaelle" active="true" fct="geklaertebaelle" weight="1.0"/>
+      <entry name="OverallGoals" active="true" fct="goal" weight="1.0"/>
+      <entry name="OverallFouls" active="true" fct="foulss" weight="1.0"/>
+      <entry name="OverallGeklaerteBaelle" active="true" fct="gebae" weight="1.0"/>
       <entry name="Position" active="true" fct="default function" weight="1.0"/>
       <entry name="OverallxA" active="true" fct="xa" weight="1.0"/>
-      <entry name="OverallxA90" active="true" fct="xa90" weight="1.0"/>
+      <entry name="OverallxA90" active="true" fct="xa9" weight="1.0"/>
       <entry name="OverallDribblings" active="true" fct="dribblings" weight="1.0"/>
       <entry name="OverallxG" active="true" fct="xg" weight="1.0"/>
-      <entry name="OverallSh90" active="true" fct="sh90" weight="1.0"/>
+      <entry name="OverallSh90" active="true" fct="sh" weight="1.0"/>
       <entry name="OverallEinsatzquote" active="true" fct="einsatzquote" weight="1.0"/>
-      <entry name="OverallBallverlust" active="true" fct="ballverlust" weight="1.0"/>
-      <entry name="Alter" active="true" fct="alter" weight="1.0"/>
+      <entry name="OverallBallverlust" active="true" fct="ballver" weight="1.0"/>
+      <entry name="Alter" active="true" fct="alt" weight="1.0"/>
       <entry name="OverallBlockSchuss" active="true" fct="blockschuss" weight="1.0"/>
-      <entry name="OverallxG90" active="true" fct="xg90" weight="1.0"/>
-      <entry name="OverallKP90" active="true" fct="kp90" weight="1.0"/>
-      <entry name="OverallTacklingquote" active="true" fct="tacklingquote" weight="1.0"/>
+      <entry name="OverallxG90" active="true" fct="xg9" weight="1.0"/>
+      <entry name="OverallKP90" active="true" fct="kp" weight="1.0"/>
+      <entry name="OverallTacklingquote" active="true" fct="tackling" weight="1.0"/>
+      <entry name="OverallTorschuesse" active="true" fct="torschuss" weight="1.0"/>
     </amalgam>
   </concept>
 </model>

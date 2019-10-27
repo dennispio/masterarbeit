@@ -74,6 +74,9 @@ public class CbrTask {
 				i.addAttribute("OverallxG", c.getOverallxG());
 				i.addAttribute("OverallxG90", c.getOverallxGNEUN());
 				i.addAttribute("Position", c.getPosition());
+				i.addAttribute("OverallTorschuesse", c.getOverallTorschuesse());
+				i.addAttribute("OverallLuftzweikampf", c.getOverallLuftzweikampf());
+				i.addAttribute("transfermarktwert", c.getTransfermarktwert());
 		
 				cb.addCase(i);
 				count++;

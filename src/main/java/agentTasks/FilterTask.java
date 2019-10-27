@@ -25,7 +25,7 @@ public class FilterTask {
 				FilterInt(player.getAlter()),
 				player.getName(),
 				FilterFloat(player.getOverallAbgefangeneBaelle()),
-				FilterInt(player.getOverllAssists()),
+				FilterInt(player.getOverallAssists()),
 				FilterFloat(player.getOverallBallEroberungen()),
 				FilterFloat(player.getOverallBallverlust()),
 				FilterBewertungFloat(player.getOverallBewertung()),
@@ -49,10 +49,25 @@ public class FilterTask {
 				FilterFloat(player.getOverallxG()),
 				FilterFloat(player.getOverallxGNEUN()),
 				FilterPosition(player.getPosition()),
-				FilterBewertungFloat(player.getOverallBewertung()));
+				FilterFloat(player.getOverallTorschuesse()),
+				FilterProzent(player.getOverallLuftzweikampf()),
+				FilterTransfermarktFloat(player.getTransfermarktwert()));
+
+		System.out.println(c);
+		System.out.println("##########CASE im FILTER TASK###########");
+		
 		DataStorage.getSharedDataStorage().getCases().add(c);
 		
 		
+	}
+	
+	private float FilterTransfermarktFloat(String p) {
+		if(p != null) {
+				String numberString = p.replace(",", ".");
+				float number = Float.parseFloat(numberString);
+				return number;
+		}
+		return 0;
 	}
 	
 	private float FilterProzent(String p) {

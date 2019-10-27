@@ -23,12 +23,23 @@ public class APICrawler {
 	public void crawlApi() throws JSONException, IOException {
 		DataStorage dataStorage = DataStorage.getSharedDataStorage();
 	    
-	    String[] players = {"witsel", "reus", "hazard", "hakimi", "bürki", "hitz", 
+	    String[] dortmund = {"witsel", "reus", "hazard", "hakimi", "bürki", "hitz", 
   				"Akanji", "Hummels",
   				"Piszczek", "schmelzer", "schulz", "zagadou", "brandt",
   				"bruun larsen", "dahoud", "Delaney",
   				"Guerreiro", "Sancho","weigl", "götze", "Alc"};
 	    
+	    String[] bayern = {"Lewandowski", "Perisic", "Coutinho", "Gnabry", "Coman", "Alaba", 
+  				"Pavard", "Davies",
+  				"Süle", "Neuer", "Boateng", "Kimmich", "Müller", 
+  				"Martínez",
+  				 "Thiago", "Goretzka",
+  				"Hernández",
+  				 "Tolisso","Cuisance"};
+	    
+	   String transfermarktlinkDortmund = "https://www.transfermarkt.de/borussia-dortmund/startseite/verein/16";
+	   String transfermarktlinkBayern = "https://www.transfermarkt.de/fc-bayern-munchen/startseite/verein/27";
+
 	    String[] ligainsiderslink = {
 	    		"https://www.ligainsider.de/bundesliga/ranking-top-10/abgefangene-baelle/",
 	    		"https://www.ligainsider.de/bundesliga/ranking-top-10/balleroberungen/",
@@ -47,59 +58,140 @@ public class APICrawler {
 	    		"https://www.ligainsider.de/bundesliga/ranking-top-10/grosschancen-kreiert/",
 	    		"https://www.ligainsider.de/bundesliga/ranking-top-10/fouls/"}; 	
 	    
-	    String ligaallgemeinlink = "https://www.ligainsider.de/borussia-dortmund/14/kader/";
+	    String ligaallgemeinlinkDortmund = "https://www.ligainsider.de/borussia-dortmund/14/kader/";
+	    String ligaallgemeinlinkBayern = "https://www.ligainsider.de/fc-bayern-muenchen/1/kader/";
+
 	    
-	    String understatlink = "https://understat.com/team/Borussia_Dortmund/2019";
-	    
+	    String understatlinkDortmund = "https://understat.com/team/Borussia_Dortmund/2019";
+	    String understatlinkBayern = "https://understat.com/team/Bayern_Munich/2019";
+
+	    String kickerDortmund = "https://www.kicker.de/borussia-dortmund-17/kader/1-bundesliga/2019-20/";
+	    String kickerBayern = "https://www.kicker.de/bayern-muenchen-14/kader/1-bundesliga/2019-20";
+
+	   
 	    System.out.println("BIN IN API CRAWLER");
 	    
-		final WebClient webClient = new WebClient(BrowserVersion.FIREFOX_60);
-		HtmlPage myPage = ((HtmlPage) webClient.getPage(understatlink));
+	    final WebClient webClient = new WebClient(BrowserVersion.FIREFOX_60);
+		HtmlPage myPageDortmund = ((HtmlPage) webClient.getPage(understatlinkDortmund));
+		HtmlPage myPageBayern = ((HtmlPage) webClient.getPage(understatlinkBayern));
+	    webClient.getOptions().setCssEnabled(false);
 		webClient.waitForBackgroundJavaScript(10 * 500);
 
-		String theContent = myPage.asXml();
+		String theContentDortmund = myPageDortmund.asXml();
+		String theContentBayern = myPageBayern.asXml();
+
+		
+
+
+		 for(String player : dortmund) {
+		    	
+		    	Player playerC = new Player(
+		    			//Name
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(0),
+		    			//Alter
+		    	    	ligaallgemein(ligaallgemeinlinkDortmund,player).get(2),
+		    	    	//AbgefangeneBaelle
+		    	    	ligainsider(ligainsiderslink[0],player),
+		    	    	//Overall Assists
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(2),
+		    	    	//OverallBalleroberungen
+		    	    	ligainsider(ligainsiderslink[1],player),
+		    	    	//OverallBallverlust
+		    	    	ligainsider(ligainsiderslink[7],player),
+		    	    	//OverallBewertung
+		    		    kicker(player,kickerDortmund),
+		    		    //OverallBlockschuss
+		    	    	ligainsider(ligainsiderslink[11],player),
+		    	        //OverallDribblings
+		    	    	ligainsider(ligainsiderslink[10],player),
+		    	    	//OverallEinsatzquote
+		    	    	ligaallgemein(ligaallgemeinlinkDortmund,player).get(4),
+		    	    	//OverallFouls
+		    	    	ligainsider(ligainsiderslink[15],player),
+		    	    	//OverallGeklärteBälle
+		    	    	ligainsider(ligainsiderslink[13],player),
+		    	    	//OverallGoals
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(1),
+		    	    	//OverallKP9
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(4),
+		    	    	//OverallKreierteGroßchancen
+		    	    	ligainsider(ligainsiderslink[14],player),
+		    	    	//OverallMinPlayed
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(9),
+		    	    	//OverallPassquote
+		    	    	ligainsider(ligainsiderslink[2],player),
+		    	    	//OverallSchussgenauigkeit
+		    	    	ligainsider(ligainsiderslink[5],player),
+		    	    	//OverallSH9
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(3),
+		    	        //OverallTacklingquote
+		    	  	    ligainsider(ligainsiderslink[9],player),
+		    	        //OverallTorschussvorlagen
+		    		  	ligainsider(ligainsiderslink[12],player),
+		    		  	//OverallZweikampfquote
+		    		  	ligainsider(ligainsiderslink[4],player),
+		    		  	//OverallxA
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(6),
+		    	    	//OverallxA90
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(8),
+		    	    	//OverallxG
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(5),
+		    	    	//OverallxG90
+		    	    	understat(understatlinkDortmund,player,theContentDortmund).get(7),
+		    	    	//Position
+		    	    	ligaallgemein(ligaallgemeinlinkDortmund,player).get(3),
+		    		    //overallTorschuesse
+		    		  	ligainsider(ligainsiderslink[3],player),
+		    		    //overallLuftkampf
+		    		  	ligainsider(ligainsiderslink[6],player),
+		    		  	//Transfermarktwert
+		    		  	transfermarkt(transfermarktlinkDortmund,player)
+		    	);
+		    	DataStorage.getSharedDataStorage().getSoccerplayerList().add(playerC);
+			  }
+
 	        
-	    for(String player : players) {
+	    for(String player : bayern) {
 	    	
 	    	Player playerC = new Player(
+	    			//Name
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(0),
 	    			//Alter
-	    	    	ligaallgemein(ligaallgemeinlink,player).get(2),
-	    	    	//Name
-	    	    	understat(understatlink,player,theContent).get(0),
+	    	    	ligaallgemein(ligaallgemeinlinkBayern,player).get(2),
 	    	    	//AbgefangeneBaelle
 	    	    	ligainsider(ligainsiderslink[0],player),
 	    	    	//Overall Assists
-	    	    	understat(understatlink,player,theContent).get(2),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(2),
 	    	    	//OverallBalleroberungen
 	    	    	ligainsider(ligainsiderslink[1],player),
 	    	    	//OverallBallverlust
 	    	    	ligainsider(ligainsiderslink[7],player),
 	    	    	//OverallBewertung
-	    		    kicker(player),
+	    		    kicker(player,kickerBayern),
 	    		    //OverallBlockschuss
 	    	    	ligainsider(ligainsiderslink[11],player),
 	    	        //OverallDribblings
 	    	    	ligainsider(ligainsiderslink[10],player),
 	    	    	//OverallEinsatzquote
-	    	    	ligaallgemein(ligaallgemeinlink,player).get(4),
+	    	    	ligaallgemein(ligaallgemeinlinkBayern,player).get(4),
 	    	    	//OverallFouls
 	    	    	ligainsider(ligainsiderslink[15],player),
 	    	    	//OverallGeklärteBälle
 	    	    	ligainsider(ligainsiderslink[13],player),
 	    	    	//OverallGoals
-	    	    	understat(understatlink,player,theContent).get(1),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(1),
 	    	    	//OverallKP9
-	    	    	understat(understatlink,player,theContent).get(4),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(4),
 	    	    	//OverallKreierteGroßchancen
 	    	    	ligainsider(ligainsiderslink[14],player),
 	    	    	//OverallMinPlayed
-	    	    	understat(understatlink,player,theContent).get(9),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(9),
 	    	    	//OverallPassquote
 	    	    	ligainsider(ligainsiderslink[2],player),
 	    	    	//OverallSchussgenauigkeit
 	    	    	ligainsider(ligainsiderslink[5],player),
 	    	    	//OverallSH9
-	    	    	understat(understatlink,player,theContent).get(3),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(3),
 	    	        //OverallTacklingquote
 	    	  	    ligainsider(ligainsiderslink[9],player),
 	    	        //OverallTorschussvorlagen
@@ -107,21 +199,67 @@ public class APICrawler {
 	    		  	//OverallZweikampfquote
 	    		  	ligainsider(ligainsiderslink[4],player),
 	    		  	//OverallxA
-	    	    	understat(understatlink,player,theContent).get(6),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(6),
 	    	    	//OverallxA90
-	    	    	understat(understatlink,player,theContent).get(8),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(8),
 	    	    	//OverallxG
-	    	    	understat(understatlink,player,theContent).get(5),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(5),
 	    	    	//OverallxG90
-	    	    	understat(understatlink,player,theContent).get(7),
+	    	    	understat(understatlinkBayern,player,theContentBayern).get(7),
 	    	    	//Position
-	    	    	ligaallgemein(ligaallgemeinlink,player).get(3),
-	    	    	//Spieltag
-	    		    kicker(player)
+	    	    	ligaallgemein(ligaallgemeinlinkBayern,player).get(3),
+	    		    //overallTorschuesse
+	    		  	ligainsider(ligainsiderslink[3],player),
+	    		    //overallLuftkampf
+	    		  	ligainsider(ligainsiderslink[6],player),
+	    		  	//Transfermarktwert
+	    		  	transfermarkt(transfermarktlinkBayern,player)
 	    	);
 	    	DataStorage.getSharedDataStorage().getSoccerplayerList().add(playerC);
 		  }
-	   
+	    	   
+	}
+	
+	public String transfermarkt(String transfermarkt, String player) {
+		Document doc;  
+
+		try {
+				doc = Jsoup.connect(transfermarkt).get();		    
+			    Element table = doc.select("table").get(1); //select the first table.
+			    Elements rows = table.select("tr");
+			    String spielerpreis = "0";
+			    System.out.println("bin im TRANSFERMARKT+++++++++++++++++++++++++");
+			    
+			    for (int k = 1; k < rows.size(); k++) { //first row is the col names so skip it.
+			    	Element row = rows.get(k);
+			        Elements name = row.getElementsByClass("hide");
+			        Elements preis = row.getElementsByClass("rechts hauptlink");
+			        
+			        if(name.text().toLowerCase().contains(player.toLowerCase())) {
+						 System.out.println(name.text());
+						 String[] preiss = preis.text().split("\\s+");
+						 if (preiss[0].contains(",")) {
+							 String temp = preiss[0].toString();
+							 spielerpreis = temp;
+							 System.out.println(spielerpreis);
+							 System.out.println("cash cash cash cash");
+						 }else {
+							 String temp = preiss[0].toString();
+							 spielerpreis = "0," + temp;
+							 System.out.println("cash cash cash cash");
+						 }
+						 return spielerpreis;
+			        }
+			   } 
+			   return "0";
+		     
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		    
+		
+		
+		return null;
 	}
 	    	 
 	
@@ -218,16 +356,26 @@ public class APICrawler {
 	}
 	
 	
-	public String kicker(String player){
+	public String kicker(String player, String kickerlink){
 	    Document document;
 		
 		//Get Document object after parsing the html from given url.
 		try {
-			document = Jsoup.connect("https://www.kicker.de/borussia-dortmund-17/kader/1-bundesliga/2019-20").get();
+			document = Jsoup.connect(kickerlink).get();
 		    Elements kicker = document.getElementsByTag("tr");
+		    System.out.println("bin im Kicker");
 	        for (Element paragraph : kicker) {	  
         		String note = paragraph.getElementsByClass("kick__table--ranking__number kick__table--ranking__master kick__respt-m-w-70").text().toString();
- 			    String name = paragraph.getElementsByTag("strong").text();	
+ 			    String name = paragraph.getElementsByTag("strong").text();
+ 			    
+ 			    if (player.toLowerCase().equals("hernández")) {
+ 			    	player = "Hernandez";	
+ 			    }
+ 			    
+ 			   if (player.toLowerCase().equals("martínez")) {
+ 				   	System.out.println("Bin bei Martin");
+			    	player = "Martinez";	
+			    }
 		    
 			    if (name.toLowerCase().contains(player.toLowerCase())) {
 	 				System.out.println(note);

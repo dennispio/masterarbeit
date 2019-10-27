@@ -48,9 +48,57 @@ public class AgentController {
 	    @RequestMapping(method = RequestMethod.GET, value = "/retrievalPlayer")
 	    public GatewayAgent doRetrievalTask(@RequestParam Map<String, String> customQuery) {
 		
-	    QueryCase player = new QueryCase(
-	    	customQuery.get("spielername"));   
-			return new GatewayAgent("RETRIEVAL_AGENT", player);
+	    if(customQuery.get("spielername").equals("undefined")) {
+	    	QueryCase player = new QueryCase(
+	    	    	customQuery.get("alter"),
+	    	    	customQuery.get("anzahl"),
+	    	    	customQuery.get("spielername"),
+	    	    	customQuery.get("overallAbgefangeneBaelle"),
+	    	    	customQuery.get("overallAssists"),
+	    	    	customQuery.get("overallBallEroberungen"),
+	    	    	customQuery.get("overallBallverlust"),
+	    	    	customQuery.get("overallBewertung"),
+	    	    	customQuery.get("overallBlockSchuss"),
+	    	    	customQuery.get("overallDribblings"),
+	    	    	customQuery.get("overallEinsatzquote"),
+	    	    	customQuery.get("overallFouls"),
+	    	    	customQuery.get("overallGeklaerteBaelle"),
+	    	    	customQuery.get("overallGoals"),
+	    	    	customQuery.get("overallKP90"),
+	    	    	customQuery.get("overallKreierteGrosschancen"),
+	    	    	customQuery.get("overallPassquote"),
+	    	    	customQuery.get("overallSchussgenauigkeit"),
+	    	    	customQuery.get("overallSh90"),
+	    	    	customQuery.get("overallTacklingquote"),
+	    	    	customQuery.get("overallTorschussVorlagen"),
+	    	    	customQuery.get("overallZweikampfquote"),
+	    	    	customQuery.get("overallxA"),
+	    	    	customQuery.get("overallxA90"),
+	    	    	customQuery.get("overallxG"),
+	    	    	customQuery.get("overallxG90"),
+	    	    	customQuery.get("position"),
+	    	    	customQuery.get("spieltagbewertung"),
+	    	    	customQuery.get("overallTorschuesse"),
+	    	    	customQuery.get("overallLuftzweikampf"),
+	    	    	customQuery.get("transfermarktwert"),
+	    	    	customQuery.get("spielertyp"));
+	    	    	
+
+	    	    	System.out.println(customQuery.get("spielername").toString() +"TEST ETST TEST");
+	    	    	System.out.println(customQuery.get("anzahl").toString() +"STRING");
+	    			return new GatewayAgent("RETRIEVAL_AGENT", player);
+	    	
+	    }else {
+	    			System.out.println("STRING");
+
+	    			QueryCase player = new QueryCase(
+	    	    	customQuery.get("spielername"),
+	    	    	customQuery.get("anzahl"),
+	    	    	customQuery.get("spielertyp"));
+	    	    	System.out.println(customQuery.get("spielername").toString() +"STRING");
+	    	    	System.out.println(customQuery.get("anzahl").toString() +"STRING");
+	    			return new GatewayAgent("RETRIEVAL_AGENT", player);
+	    }
 	   }
 	   
 	   @CrossOrigin(origins="http://localhost:3000")
