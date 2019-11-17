@@ -54,7 +54,7 @@ public class FilterTask {
 				FilterTransfermarktFloat(player.getTransfermarktwert()));
 
 		System.out.println(c);
-		System.out.println("##########CASE im FILTER TASK###########");
+	    System.out.println("Start Filter-Task");
 		
 		DataStorage.getSharedDataStorage().getCases().add(c);
 		
@@ -113,14 +113,6 @@ public class FilterTask {
 			}
 	}
 	
-	//private float FilterFloatBewertung(String p) {
-	//	if(!p.equals("-")){
-	//			String numberString = p.replace(",", ".");
-	//			float number = Float.parseFloat(numberString);
-	//			return number;
-	//		}
-	//	return 5;
-	//}
 	
 	private String FilterPosition(String m) {
 		if(m.contains("Torhüter")) {

@@ -23,15 +23,15 @@ public class APICrawler {
 	public void crawlApi() throws JSONException, IOException {
 		DataStorage dataStorage = DataStorage.getSharedDataStorage();
 	    
-	    String[] dortmund = {"witsel", "reus", "hazard", "hakimi", "bürki", "hitz", 
+	    String[] dortmund = {"witsel", "reus", "hazard", "hakimi", 
   				"Akanji", "Hummels",
   				"Piszczek", "schmelzer", "schulz", "zagadou", "brandt",
   				"bruun larsen", "dahoud", "Delaney",
   				"Guerreiro", "Sancho","weigl", "götze", "Alc"};
 	    
-	    String[] bayern = {"Lewandowski", "Perisic", "Coutinho", "Gnabry", "Coman", "Alaba", 
+	    String[] bayern = {"Lewandowski", "Peri", "Coutinho", "Gnabry", "Coman", "Alaba", 
   				"Pavard", "Davies",
-  				"Süle", "Neuer", "Boateng", "Kimmich", "Müller", 
+  				"Süle", "Boateng", "Kimmich", "Müller", 
   				"Martínez",
   				 "Thiago", "Goretzka",
   				"Hernández",
@@ -69,7 +69,7 @@ public class APICrawler {
 	    String kickerBayern = "https://www.kicker.de/bayern-muenchen-14/kader/1-bundesliga/2019-20";
 
 	   
-	    System.out.println("BIN IN API CRAWLER");
+	    System.out.println("Start API Crawler-Task");
 	    
 	    final WebClient webClient = new WebClient(BrowserVersion.FIREFOX_60);
 		HtmlPage myPageDortmund = ((HtmlPage) webClient.getPage(understatlinkDortmund));
@@ -160,57 +160,57 @@ public class APICrawler {
 	    	    	ligaallgemein(ligaallgemeinlinkBayern,player).get(2),
 	    	    	//AbgefangeneBaelle
 	    	    	ligainsider(ligainsiderslink[0],player),
-	    	    	//Overall Assists
+	    	    	//Assists
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(2),
-	    	    	//OverallBalleroberungen
+	    	    	//Balleroberungen
 	    	    	ligainsider(ligainsiderslink[1],player),
-	    	    	//OverallBallverlust
+	    	    	//Ballverlust
 	    	    	ligainsider(ligainsiderslink[7],player),
-	    	    	//OverallBewertung
+	    	    	//Bewertung
 	    		    kicker(player,kickerBayern),
-	    		    //OverallBlockschuss
+	    		    //Blockschuss
 	    	    	ligainsider(ligainsiderslink[11],player),
-	    	        //OverallDribblings
+	    	        //Dribblings
 	    	    	ligainsider(ligainsiderslink[10],player),
-	    	    	//OverallEinsatzquote
+	    	    	//Einsatzquote
 	    	    	ligaallgemein(ligaallgemeinlinkBayern,player).get(4),
-	    	    	//OverallFouls
+	    	    	//Fouls
 	    	    	ligainsider(ligainsiderslink[15],player),
-	    	    	//OverallGeklärteBälle
+	    	    	//GeklärteBälle
 	    	    	ligainsider(ligainsiderslink[13],player),
-	    	    	//OverallGoals
+	    	    	//Goals
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(1),
-	    	    	//OverallKP9
+	    	    	//KP9
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(4),
-	    	    	//OverallKreierteGroßchancen
+	    	    	//KreierteGroßchancen
 	    	    	ligainsider(ligainsiderslink[14],player),
-	    	    	//OverallMinPlayed
+	    	    	//MinPlayed
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(9),
-	    	    	//OverallPassquote
+	    	    	//Passquote
 	    	    	ligainsider(ligainsiderslink[2],player),
-	    	    	//OverallSchussgenauigkeit
+	    	    	//Schussgenauigkeit
 	    	    	ligainsider(ligainsiderslink[5],player),
-	    	    	//OverallSH9
+	    	    	//SH90
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(3),
-	    	        //OverallTacklingquote
+	    	        //Tacklingquote
 	    	  	    ligainsider(ligainsiderslink[9],player),
-	    	        //OverallTorschussvorlagen
+	    	        //Torschussvorlagen
 	    		  	ligainsider(ligainsiderslink[12],player),
-	    		  	//OverallZweikampfquote
+	    		  	//Zweikampfquote
 	    		  	ligainsider(ligainsiderslink[4],player),
-	    		  	//OverallxA
+	    		  	//xA
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(6),
-	    	    	//OverallxA90
+	    	    	//xA90
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(8),
-	    	    	//OverallxG
+	    	    	//xG
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(5),
-	    	    	//OverallxG90
+	    	    	//xG90
 	    	    	understat(understatlinkBayern,player,theContentBayern).get(7),
 	    	    	//Position
 	    	    	ligaallgemein(ligaallgemeinlinkBayern,player).get(3),
-	    		    //overallTorschuesse
+	    		    //Torschuesse
 	    		  	ligainsider(ligainsiderslink[3],player),
-	    		    //overallLuftkampf
+	    		    //Luftkampf
 	    		  	ligainsider(ligainsiderslink[6],player),
 	    		  	//Transfermarktwert
 	    		  	transfermarkt(transfermarktlinkBayern,player)
@@ -228,7 +228,6 @@ public class APICrawler {
 			    Element table = doc.select("table").get(1); //select the first table.
 			    Elements rows = table.select("tr");
 			    String spielerpreis = "0";
-			    System.out.println("bin im TRANSFERMARKT+++++++++++++++++++++++++");
 			    
 			    for (int k = 1; k < rows.size(); k++) { //first row is the col names so skip it.
 			    	Element row = rows.get(k);
@@ -242,16 +241,13 @@ public class APICrawler {
 							 String temp = preiss[0].toString();
 							 spielerpreis = temp;
 							 System.out.println(spielerpreis);
-							 System.out.println("cash cash cash cash");
 						 }else {
 							 String temp = preiss[0].toString();
 							 spielerpreis = "0," + temp;
-							 System.out.println("cash cash cash cash");
 						 }
 						 return spielerpreis;
 			        }
 			   } 
-			   return "0";
 		     
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -269,7 +265,7 @@ public class APICrawler {
 
 		Document doc1 = Jsoup.parse(theContent);
 
-		Element table = doc1.select("table").get(1); //select the first table.
+		Element table = doc1.select("table").get(1); 
 		Elements rows = table.select("tr");
 		    
 		for (int k = 1; k < rows.size(); k++) {

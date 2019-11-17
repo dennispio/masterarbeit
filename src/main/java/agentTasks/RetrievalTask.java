@@ -52,7 +52,6 @@ public class RetrievalTask {
 	    Instance query = retrieve.getQueryInstance();	    
 	  	
 	    IntegerDesc alterDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("Alter");
-	    StringDesc nameDesc = (StringDesc) soccerplayer.getAllAttributeDescs().get("Name");
 	    FloatDesc overallAbgefangeneBaelleDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallAbgefangeneBaelle");
 	    IntegerDesc overallAssistsDesc = (IntegerDesc) soccerplayer.getAllAttributeDescs().get("OverallAssists");
 	    FloatDesc overallBallEroberungenDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallBallEroberungen");
@@ -88,35 +87,93 @@ public class RetrievalTask {
 			
 			System.out.println(soccerplayer.getInstance(ph.getName())+ "es klappt den spieler zu catchen");
 			System.out.println(soccerplayer.getInstance(ph.getName()).getAttForDesc(alterDesc).getValueAsString() + "es klappt den spieler zu catchen");		
+			
 			query.addAttribute(alterDesc, alterDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(alterDesc).getValueAsString())));
-	    	query.addAttribute(overallAbgefangeneBaelleDesc, overallAbgefangeneBaelleDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString())));
-	    	query.addAttribute(overallAssistsDesc, overallAssistsDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAssistsDesc).getValueAsString())));
-	    	query.addAttribute(overallBallEroberungenDesc, overallBallEroberungenDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallEroberungenDesc).getValueAsString())));
-	    	query.addAttribute(overallBallverlustDesc, overallBallverlustDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallverlustDesc).getValueAsString())));
-	    	query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBewertungDesc).getValueAsString())));
-	    	query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBlockSchussDesc).getValueAsString())));
-	    	query.addAttribute(overallDribblingsDesc, overallDribblingsDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallDribblingsDesc).getValueAsString())));
-	    	query.addAttribute(overallEinsatzquoteDesc, overallEinsatzquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallEinsatzquoteDesc).getValueAsString())));
-	    	query.addAttribute(overallFoulsDesc, overallFoulsDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallFoulsDesc).getValueAsString())));
-	    	query.addAttribute(overallGeklaerteBaelleDesc, overallGeklaerteBaelleDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGeklaerteBaelleDesc).getValueAsString())));
-	    	query.addAttribute(overallGoalsDesc, overallGoalsDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGoalsDesc).getValueAsString())));
-	    	query.addAttribute(overallKP90Desc, overallKP90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallKP90Desc).getValueAsString())));
-	    	query.addAttribute(overallkreierteGrosschancenDesc, overallkreierteGrosschancenDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallkreierteGrosschancenDesc).getValueAsString())));
-	    	query.addAttribute(overallMinPlayedDesc, overallMinPlayedDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallMinPlayedDesc).getValueAsString())));
-	    	query.addAttribute(overallPassquoteDesc, overallPassquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallPassquoteDesc).getValueAsString())));
-	    	query.addAttribute(overallSchussgenauigkeitDesc, overallSchussgenauigkeitDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString())));
-	    	query.addAttribute(overallSH90Desc, overallSH90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSH90Desc).getValueAsString())));
-	    	query.addAttribute(overallTacklingquoteDesc, overallTacklingquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTacklingquoteDesc).getValueAsString())));
-	    	query.addAttribute(overallZweikampfquoteDesc, overallZweikampfquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallZweikampfquoteDesc).getValueAsString())));
-	    	query.addAttribute(overallxADesc, overallxADesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxADesc).getValueAsString())));
-	    	query.addAttribute(overallxA90Desc, overallxA90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxA90Desc).getValueAsString())));
-	    	query.addAttribute(overallxGDesc, overallxGDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxGDesc).getValueAsString())));
-	    	query.addAttribute(overallxG90Desc, overallxG90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxG90Desc).getValueAsString())));
-	    	query.addAttribute(overallTorschussVorlagen, overallTorschussVorlagen.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschussVorlagen).getValueAsString())));
-	    	query.addAttribute(positionDesc, positionDesc.getAttribute(soccerplayer.getInstance(ph.getName()).getAttForDesc(positionDesc).getValueAsString()));
-	    	query.addAttribute(overallTorschuesseDesc, overallTorschuesseDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschuesseDesc).getValueAsString())));
-	    	query.addAttribute(overallLuftzweikampfDesc, overallLuftzweikampfDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallLuftzweikampfDesc).getValueAsString())));
-	    	query.addAttribute(transfermarktwertDesc, transfermarktwertDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(transfermarktwertDesc).getValueAsString())));
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallAbgefangeneBaelleDesc, overallAbgefangeneBaelleDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAssistsDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallAssistsDesc, overallAssistsDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAssistsDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallEroberungenDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallBallEroberungenDesc, overallBallEroberungenDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallEroberungenDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallverlustDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallBallverlustDesc, overallBallverlustDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBallverlustDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBewertungDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBewertungDesc).getValueAsString())));
+			};
+	
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBlockSchussDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBlockSchussDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallDribblingsDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallDribblingsDesc, overallDribblingsDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallDribblingsDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallEinsatzquoteDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallEinsatzquoteDesc, overallEinsatzquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallEinsatzquoteDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallFoulsDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallFoulsDesc, overallFoulsDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallFoulsDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGeklaerteBaelleDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallGeklaerteBaelleDesc, overallGeklaerteBaelleDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGeklaerteBaelleDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGoalsDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallGoalsDesc, overallGoalsDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallGoalsDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallKP90Desc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallKP90Desc, overallKP90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallKP90Desc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallkreierteGrosschancenDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallkreierteGrosschancenDesc, overallkreierteGrosschancenDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallkreierteGrosschancenDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallMinPlayedDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallMinPlayedDesc, overallMinPlayedDesc.getAttribute(Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallMinPlayedDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallPassquoteDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallPassquoteDesc, overallPassquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallPassquoteDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallSchussgenauigkeitDesc, overallSchussgenauigkeitDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSchussgenauigkeitDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSH90Desc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallSH90Desc, overallSH90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallSH90Desc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTacklingquoteDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallTacklingquoteDesc, overallTacklingquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTacklingquoteDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallZweikampfquoteDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallZweikampfquoteDesc, overallZweikampfquoteDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallZweikampfquoteDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxADesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallxADesc, overallxADesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxADesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxA90Desc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallxA90Desc, overallxA90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxA90Desc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxGDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallxGDesc, overallxGDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxGDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxG90Desc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallxG90Desc, overallxG90Desc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallxG90Desc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschussVorlagen).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallTorschussVorlagen, overallTorschussVorlagen.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschussVorlagen).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(positionDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(positionDesc, positionDesc.getAttribute(soccerplayer.getInstance(ph.getName()).getAttForDesc(positionDesc).getValueAsString()));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschuesseDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallTorschuesseDesc, overallTorschuesseDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallTorschuesseDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallLuftzweikampfDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(overallLuftzweikampfDesc, overallLuftzweikampfDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallLuftzweikampfDesc).getValueAsString())));
+			};
+			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(transfermarktwertDesc).getValueAsString() != "_unknown_") {
+				query.addAttribute(transfermarktwertDesc, transfermarktwertDesc.getAttribute(Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(transfermarktwertDesc).getValueAsString())));
+				};
 
 
 			switch(ph.getSpielertyp()){
@@ -150,77 +207,73 @@ public class RetrievalTask {
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 1);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 1);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(nameDesc, 1);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 1);
 		    	break;
 	
 			case "defensiv": 
 			
-				soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 1);
+				soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 2);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAssistsDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallEroberungenDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBlockSchussDesc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallEroberungenDesc, 2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 0.7);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBlockSchussDesc, 2);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallDribblingsDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGeklaerteBaelleDesc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGeklaerteBaelleDesc, 1.0);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGoalsDesc, 0.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallKP90Desc, 0.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallkreierteGrosschancenDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallMinPlayedDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallPassquoteDesc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallMinPlayedDesc, 0.1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallPassquoteDesc, 1.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallSchussgenauigkeitDesc, 0.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallSH90Desc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTacklingquoteDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallZweikampfquoteDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxADesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxA90Desc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTacklingquoteDesc, 2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallZweikampfquoteDesc, 2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxADesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxA90Desc, 0.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxGDesc, 0.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxG90Desc, 0.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschussVorlagen, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(nameDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 1);
-		    	System.out.println("TESTESTTETSTSETESTSETS++++++++++++++++++++");
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 5.0);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 4.0);
 		    	break;
 
 			case "offensiv": 
 		    	System.out.println("asdasdasd++++++++++++++++++++");
-				soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAssistsDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallEroberungenDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBlockSchussDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallAssistsDesc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallEroberungenDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallBlockSchussDesc, 0.2);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallDribblingsDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGeklaerteBaelleDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGoalsDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallKP90Desc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGeklaerteBaelleDesc, 0.1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallGoalsDesc, 2.4);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallKP90Desc, 1.5);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallkreierteGrosschancenDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallMinPlayedDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallPassquoteDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallMinPlayedDesc, 0.1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallPassquoteDesc, 0.7);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallSchussgenauigkeitDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallSH90Desc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTacklingquoteDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallZweikampfquoteDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxADesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxA90Desc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxGDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxG90Desc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschussVorlagen, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallSH90Desc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTacklingquoteDesc, 0.2);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallZweikampfquoteDesc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxADesc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxA90Desc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxGDesc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallxG90Desc, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschussVorlagen, 1.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 2);
 		    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 0.5);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(nameDesc, 1);
-		    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 1);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 0.5);
+		    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 4.0);
 
 				break;		
 			}
@@ -286,7 +339,6 @@ public class RetrievalTask {
 	    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 1);
 	    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 1);
 	    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 1);
-	    	soccerplayer.getActiveAmalgamFct().setWeight(nameDesc, 1);
 	    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 1);
 		}
 	    
