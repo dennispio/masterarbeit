@@ -36,7 +36,7 @@ public class RetrievalCase implements Serializable {
 	private String overallLuftzweikampf;
 	private String transfermarktwert;
 	
-	
+	//Konstruktor zur Speicherung der Retrieval Ergebnisse.
 	public RetrievalCase(String name, String similarity, String alter, String overallAbgefangeneBaelle,
 			String overallAssists, String overallBallEroberungen, String overallBallverlust, String overallBewertung,
 			String overallBlockSchuss, String overallDribblings, String overallEinsatzquote, String overallFouls,

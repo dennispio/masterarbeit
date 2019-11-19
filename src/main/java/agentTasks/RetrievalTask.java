@@ -35,11 +35,11 @@ public class RetrievalTask {
 		return this.message;
 	}
 	
+	//Retrievalverfahren mit den in der Fallbasis gespeicherten Fällen.
 	public void retrievalCases(Serializable player) {
 		DataStorage dataStorage = DataStorage.getSharedDataStorage();
 
-	try {
-		
+	try {		
 		QueryCase ph = (QueryCase) player;
 		Concept soccerplayer = DataStorage.getSharedDataStorage().getProject().getConceptByID("Soccerplayer");
 	    ICaseBase cb = DataStorage.getSharedDataStorage().getCasebasee();
@@ -76,11 +76,7 @@ public class RetrievalTask {
 	    FloatDesc  overallLuftzweikampfDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("OverallLuftzweikampf");
 	    FloatDesc  transfermarktwertDesc = (FloatDesc) soccerplayer.getAllAttributeDescs().get("transfermarktwert");
 	    		
-		if(!(ph.getName().equals("undefined"))){
-			
-			System.out.println(soccerplayer.getInstance(ph.getName())+ "es klappt den spieler zu catchen");
-			System.out.println(soccerplayer.getInstance(ph.getName()).getAttForDesc(alterDesc).getValueAsString() + "es klappt den spieler zu catchen");		
-			
+		if(!(ph.getName().equals("undefined"))){					
 			query.addAttribute(alterDesc, alterDesc.getAttribute(
 					Integer.parseInt(soccerplayer.getInstance(ph.getName()).getAttForDesc(alterDesc).getValueAsString())));
 			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallAbgefangeneBaelleDesc).getValueAsString() != "_unknown_") {
@@ -103,7 +99,6 @@ public class RetrievalTask {
 				query.addAttribute(overallBewertungDesc, overallBewertungDesc.getAttribute(
 						Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBewertungDesc).getValueAsString())));
 			};
-	
 			if(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBlockSchussDesc).getValueAsString() != "_unknown_") {
 				query.addAttribute(overallBlockSchussDesc, overallBlockSchussDesc.getAttribute(
 						Float.parseFloat(soccerplayer.getInstance(ph.getName()).getAttForDesc(overallBlockSchussDesc).getValueAsString())));

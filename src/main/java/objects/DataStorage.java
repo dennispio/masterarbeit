@@ -58,6 +58,7 @@ public class DataStorage {
 	private ICaseBase casebasee;
 
 
+	//Konstruktor DataStorage Objekt
 	private DataStorage() {
 		this.addedCases = 0;
 		this.casesCount = 0;

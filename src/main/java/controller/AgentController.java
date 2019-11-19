@@ -82,21 +82,13 @@ public class AgentController {
 	    	    	customQuery.get("overallLuftzweikampf"),
 	    	    	customQuery.get("transfermarktwert"),
 	    	    	customQuery.get("spielertyp"));
-	    	    	
-
-	    	    	System.out.println(customQuery.get("spielername").toString() +"TEST ETST TEST");
-	    	    	System.out.println(customQuery.get("anzahl").toString() +"STRING");
 	    			return new GatewayAgent("RETRIEVAL_AGENT", player);
 	    	
 	    }else {
-	    			System.out.println("STRING");
-
 	    			QueryCase player = new QueryCase(
 	    	    	customQuery.get("spielername"),
 	    	    	customQuery.get("anzahl"),
 	    	    	customQuery.get("spielertyp"));
-	    	    	System.out.println(customQuery.get("spielername").toString() +"STRING");
-	    	    	System.out.println(customQuery.get("anzahl").toString() +"STRING");
 	    			return new GatewayAgent("RETRIEVAL_AGENT", player);
 	    }
 	   }

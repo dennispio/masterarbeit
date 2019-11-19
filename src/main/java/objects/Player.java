@@ -32,6 +32,8 @@ public class Player {
 	private String overallTorschuesse;
 	private String overallLuftzweikampf;
 	private String transfermarktwert;
+	
+	//Konstruktor Player.
 	public Player(String name, String alter, String overallAbgefangeneBaelle, String overallAssists,
 			String overallBallEroberungen, String overallBallverlust, String overallBewertung,
 			String overallBlockSchuss, String overallDribblings, String overallEinsatzquote, String overallFouls,

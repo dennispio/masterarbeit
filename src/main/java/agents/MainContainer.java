@@ -32,7 +32,6 @@ public class MainContainer {
 		AgentContainer mainContainer = runtime.createMainContainer(profile);
 		AgentController testAgent = mainContainer.createNewAgent("TEST_AGENT", TestAgent.class.getName(), new Object[0]);
 		AgentController metaAgent = mainContainer.createNewAgent("META_AGENT", MetaAgent.class.getName(), new Object[0]);
-		AgentController legiAgent = mainContainer.createNewAgent("LEGI_AGENT", LegitimationAgent.class.getName(), new Object[0]);
 		AgentController fonoApiAgent = mainContainer.createNewAgent("FONOAPI_AGENT", FonoApiAgent.class.getName(), new Object[0]);
 		AgentController filterAgent = mainContainer.createNewAgent("FILTER_AGENT", FilterAgent.class.getName(), new Object[0]);
 		AgentController cbrAgent = mainContainer.createNewAgent("CBR_AGENT", CbrAgent.class.getName(), new Object[0]);
@@ -48,7 +47,6 @@ public class MainContainer {
 		dataStorage.getMetaData().addAgent("CBR_AGENT");
 		metaAgent.start();
 		testAgent.start();
-		legiAgent.start();
 		fonoApiAgent.start();
 		filterAgent.start();
 		cbrAgent.start();

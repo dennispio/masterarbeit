@@ -37,8 +37,8 @@ public class QueryCase implements Serializable {
 	private String overallLuftzweikampf;
 	private String transfermarktwert;
 	private String spielertyp;
-
 	
+	//Konstruktor Query für den Spieleraustausch.
 	public QueryCase(String name, String anzahl, String spielertyp) {
 		super();
 		this.name = name;
@@ -46,7 +46,7 @@ public class QueryCase implements Serializable {
 		this.spielertyp = spielertyp;
 	}
 
-
+	//Konstruktor Query für die individuelle Spielersuche
 	public QueryCase(String alter, String anzahl, String name, String overallAbgefangeneBaelle, String overllAssists,
 			String overallBallEroberungen, String overallBallverlust, String overallBewertung,
 			String overallBlockSchuss, String overallDribblings, String overallEinsatzquote, String overallFouls,

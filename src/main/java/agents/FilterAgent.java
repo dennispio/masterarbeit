@@ -5,7 +5,6 @@ import java.util.Date;
 
 import agentTasks.FilterTask;
 import agentTasks.GetMetaData;
-import agentTasks.Legitimation;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;

@@ -32,6 +32,8 @@ public class Case {
 	private float overallTorschuesse;
 	private float overallLuftzweikampf;
 	private float transfermarktwert;
+	
+	//Konstruktor Case Objekt.
 	public Case(int alter, String name, float overallAbgefangeneBaelle, int overallAssists,
 			float overallBallEroberungen, float overallBallverlust, float overallBewertung, float overallBlockSchuss,
 			float overallDribblings, float overallEinsatzquote, float overallFouls, float overallGeklaerteBaelle,

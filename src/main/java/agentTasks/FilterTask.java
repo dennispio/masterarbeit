@@ -12,6 +12,7 @@ import objects.Player;
 
 public class FilterTask {
 	
+	//Filterung der Spielerwerte in den richtigen Datentyp.
 	public void filterData(List<Player> player) {
 		for(Player p : player) {
 			parseData(p);

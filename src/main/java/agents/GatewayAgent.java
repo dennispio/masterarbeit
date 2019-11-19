@@ -59,7 +59,6 @@ public class GatewayAgent {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-			        System.out.println("BIN IN SENDMESSAGETORETRIVALAGENT");
 			        myAgent.send(msg);
 			        ACLMessage res = myAgent.receive();
 			        if (res != null) {
