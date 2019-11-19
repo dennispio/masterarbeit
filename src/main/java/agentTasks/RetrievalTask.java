@@ -40,8 +40,8 @@ public class RetrievalTask {
 		DataStorage dataStorage = DataStorage.getSharedDataStorage();
 
 	try {		
-		QueryCase ph = (QueryCase) player;
-		Concept soccerplayer = DataStorage.getSharedDataStorage().getProject().getConceptByID("Soccerplayer");
+	    QueryCase ph = (QueryCase) player;
+	    Concept soccerplayer = DataStorage.getSharedDataStorage().getProject().getConceptByID("Soccerplayer");
 	    ICaseBase cb = DataStorage.getSharedDataStorage().getCasebasee();
 	    Retrieval retrieve = new Retrieval(soccerplayer, cb);
 	    retrieve.setRetrievalMethod(RetrievalMethod.RETRIEVE_SORTED);
