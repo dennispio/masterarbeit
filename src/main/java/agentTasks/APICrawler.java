@@ -29,7 +29,7 @@ public class APICrawler {
   				"Akanji", "Hummels",
   				"Piszczek", "schmelzer", "schulz", "zagadou", "brandt",
   				"bruun larsen", "dahoud", "Delaney",
-  				"Guerreiro", "Sancho","weigl", "götze", "Alc"};
+  				"Guerreiro", "Sancho","götze", "Alc"};
 	    String[] bayern = {"Lewandowski", "Peri", "Coutinho", "Gnabry", "Coman", "Alaba", 
   				"Pavard", "Davies",
   				"Süle", "Boateng", "Kimmich", "Müller", 
