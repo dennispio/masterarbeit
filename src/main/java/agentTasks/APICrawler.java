@@ -25,11 +25,11 @@ public class APICrawler {
 	    System.out.println("Start API Crawler-Task");
 	    
 		//Initialisieren der benötigten Daten
-	    String[] dortmund = {"witsel", "reus", "hazard", "hakimi", 
+	    String[] dortmund = {"haaland","witsel", "reus", "hazard", "hakimi", 
   				"Akanji", "Hummels",
   				"Piszczek", "schmelzer", "schulz", "zagadou", "brandt",
-  				"bruun larsen", "dahoud", "Delaney",
-  				"Guerreiro", "Sancho","götze", "Alc"};
+  				"dahoud", "Delaney",
+  				"Guerreiro", "Sancho","götze"};
 	    String[] bayern = {"Lewandowski", "Peri", "Coutinho", "Gnabry", "Coman", "Alaba", 
   				"Pavard", "Davies",
   				"Süle", "Boateng", "Kimmich", "Müller", 
@@ -37,6 +37,12 @@ public class APICrawler {
   				 "Thiago", "Goretzka",
   				"Hernández",
   				 "Tolisso","Cuisance"};
+	    
+//	    String[] dortmund = {"haaland","witsel", "reus", "hazard", "hakimi", 
+//  				"Akanji", "Hummels",
+//  				"Piszczek","brandt",};
+//	    String[] bayern = {"Lewandowski", "Peri", "Coutinho"};
+	    
 	    String transfermarktlinkDortmund = "https://www.transfermarkt.de/borussia-dortmund/startseite/verein/16";
 	    String transfermarktlinkBayern = "https://www.transfermarkt.de/fc-bayern-munchen/startseite/verein/27";
 	    String[] ligainsiderslink = {

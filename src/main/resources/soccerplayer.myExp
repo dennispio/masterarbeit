@@ -4,47 +4,7 @@
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="soccerplayer" type="Concept" >
-  <desc>
-  </desc>
-</exp>
-<exp obj="OverallxG90" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallKreierteGrosschancen" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallSh90" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallGoals" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallDribblings" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="Alter" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallEinsatzquote" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallTorschussVorlagen" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallxA" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallAssists" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="Position" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
@@ -52,47 +12,23 @@
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="Position" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="OverallBallverlust" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="OverallFouls" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="OverallMinPlayed" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="OverallxA90" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="OverallEinsatzquote" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="OverallPassquote" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="Alter" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="OverallBewertung" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="transfermarktwert" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;            </desc>
-</exp>
-<exp obj="OverallBlockSchuss" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallTorschuesse" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-              </desc>
-</exp>
-<exp obj="OverallSchussgenauigkeit" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallBallEroberungen" c="Soccerplayer" type="AttributeDesc" >
-  <desc>
-&#10;                                </desc>
-</exp>
-<exp obj="OverallGeklaerteBaelle" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="OverallGoals" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
@@ -104,11 +40,51 @@
   <desc>
 &#10;                                </desc>
 </exp>
+<exp obj="OverallxG90" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallTorschuesse" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+              </desc>
+</exp>
+<exp obj="OverallAssists" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallBewertung" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallGeklaerteBaelle" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallxA90" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallKreierteGrosschancen" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallSchussgenauigkeit" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallPassquote" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallBlockSchuss" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
 <exp obj="OverallTacklingquote" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="OverallMinPlayed" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="OverallTorschussVorlagen" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
@@ -116,11 +92,31 @@
   <desc>
 &#10;                                </desc>
 </exp>
-<exp obj="OverallBallverlust" c="Soccerplayer" type="AttributeDesc" >
+<exp obj="OverallFouls" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
 <exp obj="OverallZweikampfquote" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallDribblings" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallBallEroberungen" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="transfermarktwert" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;            </desc>
+</exp>
+<exp obj="OverallxA" c="Soccerplayer" type="AttributeDesc" >
+  <desc>
+&#10;                                </desc>
+</exp>
+<exp obj="OverallSh90" c="Soccerplayer" type="AttributeDesc" >
   <desc>
 &#10;                                </desc>
 </exp>
