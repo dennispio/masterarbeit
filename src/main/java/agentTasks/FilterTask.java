@@ -71,6 +71,19 @@ public class FilterTask {
 		return 0;
 	}
 	
+	
+	private double FilterProzentDouble(String p) {
+		if(p != null) {
+			if(!(p.equals("-"))){
+				String numberwithoutprozent = p.replaceAll("%", "");
+				String numberString = numberwithoutprozent.replace(",", ".");
+				double number = Double.parseDouble(numberString);
+				return number;
+			}
+		}
+		return 0;
+	}
+	
 	private float FilterProzent(String p) {
 		if(p != null) {
 			if(!(p.equals("-"))){

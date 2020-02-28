@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import de.dfki.mycbr.core.ICaseBase;
 import de.dfki.mycbr.core.casebase.Instance;
 import de.dfki.mycbr.core.model.Concept;
+import de.dfki.mycbr.core.model.DoubleDesc;
 import de.dfki.mycbr.core.model.FloatDesc;
 import de.dfki.mycbr.core.model.IntegerDesc;
 import de.dfki.mycbr.core.model.StringDesc;
@@ -223,16 +224,16 @@ public class RetrievalTask {
 			    	break;
 		
 				case "defensiv": 		
-					soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 0.5);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 0.7);
+					soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallAssistsDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallEroberungenDesc, 1);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 0.7);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 0.5);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBlockSchussDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallDribblingsDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 1);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 0.7);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallGeklaerteBaelleDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallGoalsDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallKP90Desc, 0);
@@ -250,27 +251,27 @@ public class RetrievalTask {
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschussVorlagen, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 1);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 0.5);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 0.7);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 1);
 			    	break;
 	
 				case "offensiv": 
-			    	soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 0.5);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallAssistsDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallEroberungenDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBallverlustDesc, 0);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 0.5);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBewertungDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallBlockSchussDesc, 0);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallDribblingsDesc, 0.8);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 0);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallDribblingsDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallEinsatzquoteDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallFoulsDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallGeklaerteBaelleDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallGoalsDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallKP90Desc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallkreierteGrosschancenDesc, 1);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallMinPlayedDesc, 0);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(overallPassquoteDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallMinPlayedDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(overallPassquoteDesc, 0);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallSchussgenauigkeitDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallSH90Desc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallTacklingquoteDesc, 0);
@@ -282,8 +283,8 @@ public class RetrievalTask {
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschussVorlagen, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallTorschuesseDesc, 1);
 			    	soccerplayer.getActiveAmalgamFct().setWeight(overallLuftzweikampfDesc, 0);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 0);
-			    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 0.7);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(transfermarktwertDesc, 1);
+			    	soccerplayer.getActiveAmalgamFct().setWeight(positionDesc, 1);
 					
 //			    	soccerplayer.getActiveAmalgamFct().setWeight(alterDesc, 0);
 //			    	soccerplayer.getActiveAmalgamFct().setWeight(overallAbgefangeneBaelleDesc, 0);

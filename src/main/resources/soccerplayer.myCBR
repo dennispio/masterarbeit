@@ -20,123 +20,63 @@
   <concept name="Soccerplayer">
     <desc name="OverallKreierteGrosschancen" type="Float" min="0.0" max="3.0" mult="false" >
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="kreigross" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-3.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="2.9999" y="1.0" />
-      </fct>
+      <fct name="newKreierteGrosschance" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallLuftzweikampf" type="Float" min="0.0" max="100.0" mult="false" >
+      <fct name="newLuftzweikampf" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="luftzweikampf" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-100.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="99.99" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallPassquote" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="passquote" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-100.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="99.99" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newPassquote" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallTorschussVorlagen" type="Float" min="0.0" max="8.0" mult="false" >
-      <fct name="torvorlagen" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-8.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="7.99999" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newTorschussVorlagen" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallSchussgenauigkeit" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="schussgenauigkeit" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-100.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="99.999" y="1.0" />
-      </fct>
+      <fct name="newSchuss" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallMinPlayed" type="Integer" min="0" max="40000" mult="false" >
+      <fct name="newMinPlayed" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
       <fct name="default function" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
-      <fct name="minplayed" type="AdvancedInteger" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX">
-        <point x="-40000.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="40000.0" y="1.0" />
-      </fct>
     </desc>
     <desc name="transfermarktwert" type="Float" min="0.0" max="250.0" mult="false" >
+      <fct name="newTransfermarkt" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="transfermarkt" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-249.99999" y="1.0" />
-        <point x="0.0" y="1.0" />
-        <point x="249.99999" y="0.0" />
-      </fct>
     </desc>
     <desc name="OverallZweikampfquote" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="zweikampf" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-100.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="99.999" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newZweikampf" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallAbgefangeneBaelle" type="Float" min="0.0" max="5.0" mult="false" >
-      <fct name="abbaelle" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-5.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="4.9999" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newAbgefangene" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallAssists" type="Integer" min="0" max="30" mult="false" >
-      <fct name="assists" type="AdvancedInteger" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX">
-        <point x="-30.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="30.0" y="1.0" />
-      </fct>
       <fct name="default function" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="newAssists" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
     </desc>
     <desc name="OverallBewertung" type="Float" min="1.0" max="5.0" mult="false" >
+      <fct name="newBewertung" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="bewertung" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-4.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="3.999999999" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallBallEroberungen" type="Float" min="0.0" max="5.0" mult="false" >
+      <fct name="newBallEroberungen" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="ballero" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-5.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="4.999999" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallGoals" type="Integer" min="0" max="40" mult="false" >
+      <fct name="newGoals" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
       <fct name="default function" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
-      <fct name="goals" type="AdvancedInteger" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX">
-        <point x="-40.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="40.0" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallFouls" type="Float" min="0.0" max="4.0" mult="false" >
-      <fct name="foul" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="newfouls" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-3.99" y="1.0" />
-        <point x="0.0" y="1.0" />
-        <point x="3.999" y="0.0" />
-      </fct>
+      <fct name="newFOuls" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newFouls" type="Float" ltype="CONSTANT" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallGeklaerteBaelle" type="Float" min="0.0" max="8.0" mult="false" >
-      <fct name="geklaerteBaelle" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-8.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="7.99999" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newGeklaerteBaelle" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="Position" type="Symbol" mult="false" >
       <symbol value="ST" />
@@ -242,20 +182,12 @@
 </fct>
     </desc>
     <desc name="OverallxA" type="Float" min="0.0" max="4.0" mult="false" >
+      <fct name="newxA" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="xa" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-4.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="3.99999" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallxA90" type="Float" min="0.0" max="4.0" mult="false" >
-      <fct name="xa90" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-4.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="3.999" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newxA90" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallDribblings" type="Float" min="0.0" max="100.0" mult="false" >
       <fct name="newdrib" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
@@ -263,117 +195,78 @@
         <point x="0.0" y="1.0" />
         <point x="99.0" y="1.0" />
       </fct>
+      <fct name="newDribblings" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallxG" type="Float" min="0.0" max="8.0" mult="false" >
+      <fct name="newxG" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="xg" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-8.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="7.99999" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallSh90" type="Float" min="0.0" max="10.0" mult="false" >
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="sh90" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-10.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="9.999" y="1.0" />
-      </fct>
+      <fct name="newSh" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallEinsatzquote" type="Float" min="0.0" max="100.0" mult="false" >
+      <fct name="newEinsatz" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="einsatz" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-100.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="99.0" y="1.0" />
-      </fct>
     </desc>
     <desc name="OverallBallverlust" type="Float" min="0.0" max="8.0" mult="false" >
+      <fct name="newBallverlust" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="ballver" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-8.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="7.99999" y="1.0" />
-      </fct>
     </desc>
     <desc name="Alter" type="Integer" min="16" max="40" mult="false" >
       <fct name="default function" type="Integer" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
-      <fct name="alter" type="AdvancedInteger" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX">
-        <point x="-24.0" y="1.0" />
-        <point x="0.0" y="1.0" />
-        <point x="24.0" y="0.0" />
-      </fct>
+      <fct name="newAlter" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
     </desc>
     <desc name="OverallBlockSchuss" type="Float" min="0.0" max="3.0" mult="false" >
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="blockschuss" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-3.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="2.9999999" y="1.0" />
-      </fct>
+      <fct name="newBlockschuss" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallxG90" type="Float" min="0.0" max="5.0" mult="false" >
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="xg90" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-5.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="4.99999" y="1.0" />
-      </fct>
+      <fct name="newxG90" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallKP90" type="Float" min="0.0" max="10.0" mult="false" >
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="kp90" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-10.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="9.9999" y="1.0" />
-      </fct>
+      <fct name="newKP" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallTacklingquote" type="Float" min="0.0" max="100.0" mult="false" >
-      <fct name="tackling" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-100.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="99.999" y="1.0" />
-      </fct>
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="newTackling" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <desc name="OverallTorschuesse" type="Float" min="0.0" max="3.0" mult="false" >
       <fct name="default function" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
-      <fct name="torschuss" type="AdvancedFloat" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" >
-        <point x="-3.0" y="0.0" />
-        <point x="0.0" y="1.0" />
-        <point x="2.9999" y="1.0" />
-      </fct>
+      <fct name="newTorschusse" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="CONSTANT" rparam="1.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
     </desc>
     <amalgam name="default function" type="EUCLIDEAN" active="true" >
-      <entry name="OverallKreierteGrosschancen" active="true" fct="kreigross" weight="1.0"/>
-      <entry name="OverallLuftzweikampf" active="true" fct="luftzweikampf" weight="1.0"/>
-      <entry name="OverallPassquote" active="true" fct="passquote" weight="1.0"/>
-      <entry name="OverallTorschussVorlagen" active="true" fct="torvorlagen" weight="1.0"/>
-      <entry name="OverallSchussgenauigkeit" active="true" fct="schussgenauigkeit" weight="1.0"/>
-      <entry name="OverallMinPlayed" active="true" fct="minplayed" weight="1.0"/>
-      <entry name="transfermarktwert" active="true" fct="transfermarkt" weight="1.0"/>
-      <entry name="OverallZweikampfquote" active="true" fct="zweikampf" weight="1.0"/>
-      <entry name="OverallAbgefangeneBaelle" active="true" fct="abbaelle" weight="1.0"/>
-      <entry name="OverallAssists" active="true" fct="assists" weight="1.0"/>
-      <entry name="OverallBewertung" active="true" fct="bewertung" weight="1.0"/>
-      <entry name="OverallBallEroberungen" active="true" fct="ballero" weight="1.0"/>
-      <entry name="OverallGoals" active="true" fct="goals" weight="1.0"/>
-      <entry name="OverallFouls" active="true" fct="newfouls" weight="1.0"/>
-      <entry name="OverallGeklaerteBaelle" active="true" fct="geklaerteBaelle" weight="1.0"/>
+      <entry name="OverallKreierteGrosschancen" active="true" fct="newKreierteGrosschance" weight="1.0"/>
+      <entry name="OverallLuftzweikampf" active="true" fct="newLuftzweikampf" weight="1.0"/>
+      <entry name="OverallPassquote" active="true" fct="newPassquote" weight="1.0"/>
+      <entry name="OverallTorschussVorlagen" active="true" fct="newTorschussVorlagen" weight="1.0"/>
+      <entry name="OverallSchussgenauigkeit" active="true" fct="newSchuss" weight="1.0"/>
+      <entry name="OverallMinPlayed" active="true" fct="newMinPlayed" weight="1.0"/>
+      <entry name="transfermarktwert" active="true" fct="newTransfermarkt" weight="1.0"/>
+      <entry name="OverallZweikampfquote" active="true" fct="newZweikampf" weight="1.0"/>
+      <entry name="OverallAbgefangeneBaelle" active="true" fct="newAbgefangene" weight="1.0"/>
+      <entry name="OverallAssists" active="true" fct="newAssists" weight="1.0"/>
+      <entry name="OverallBewertung" active="true" fct="newBewertung" weight="1.0"/>
+      <entry name="OverallBallEroberungen" active="true" fct="newBallEroberungen" weight="1.0"/>
+      <entry name="OverallGoals" active="true" fct="newGoals" weight="1.0"/>
+      <entry name="OverallFouls" active="true" fct="newFOuls" weight="1.0"/>
+      <entry name="OverallGeklaerteBaelle" active="true" fct="newGeklaerteBaelle" weight="1.0"/>
       <entry name="Position" active="true" fct="default function" weight="1.0"/>
-      <entry name="OverallxA" active="true" fct="xa" weight="1.0"/>
-      <entry name="OverallxA90" active="true" fct="xa90" weight="1.0"/>
-      <entry name="OverallDribblings" active="true" fct="newdrib" weight="1.0"/>
-      <entry name="OverallxG" active="true" fct="xg" weight="1.0"/>
-      <entry name="OverallSh90" active="true" fct="sh90" weight="1.0"/>
-      <entry name="OverallEinsatzquote" active="true" fct="einsatz" weight="1.0"/>
-      <entry name="OverallBallverlust" active="true" fct="ballver" weight="1.0"/>
-      <entry name="Alter" active="true" fct="alter" weight="1.0"/>
-      <entry name="OverallBlockSchuss" active="true" fct="blockschuss" weight="1.0"/>
-      <entry name="OverallxG90" active="true" fct="xg90" weight="1.0"/>
-      <entry name="OverallKP90" active="true" fct="kp90" weight="1.0"/>
-      <entry name="OverallTacklingquote" active="true" fct="tackling" weight="1.0"/>
-      <entry name="OverallTorschuesse" active="true" fct="torschuss" weight="1.0"/>
+      <entry name="OverallxA" active="true" fct="newxA" weight="1.0"/>
+      <entry name="OverallxA90" active="true" fct="newxA90" weight="1.0"/>
+      <entry name="OverallDribblings" active="true" fct="newDribblings" weight="1.0"/>
+      <entry name="OverallxG" active="true" fct="newxG" weight="1.0"/>
+      <entry name="OverallSh90" active="true" fct="newSh" weight="1.0"/>
+      <entry name="OverallEinsatzquote" active="true" fct="newEinsatz" weight="1.0"/>
+      <entry name="OverallBallverlust" active="true" fct="newBallverlust" weight="1.0"/>
+      <entry name="Alter" active="true" fct="newAlter" weight="1.0"/>
+      <entry name="OverallBlockSchuss" active="true" fct="newBlockschuss" weight="1.0"/>
+      <entry name="OverallxG90" active="true" fct="newxG90" weight="1.0"/>
+      <entry name="OverallKP90" active="true" fct="newKP" weight="1.0"/>
+      <entry name="OverallTacklingquote" active="true" fct="newTackling" weight="1.0"/>
+      <entry name="OverallTorschuesse" active="true" fct="newTorschusse" weight="1.0"/>
     </amalgam>
   </concept>
 </model>
